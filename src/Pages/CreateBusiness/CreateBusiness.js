@@ -8,7 +8,7 @@ import { Amplify } from 'aws-amplify';
 import { generateClient } from 'aws-amplify/api';
 import { uploadData } from 'aws-amplify/storage';
 
-import { createBusiness } from '../../graphql/mutations'
+import { createBusiness } from '../../graphql/mutations';
 
 import {v4 as uuid} from 'uuid';
 
@@ -24,18 +24,19 @@ const CreateBusiness = () => {
     website: '',
     category: '',
     description: '',
-    businessImagePath: null,
-    // Add more fields as needed
+    businessImagePath: '',
+    appointments: []
   });
   const [businessProfileImage, setBusinessProfileImage] = useState("");
 
   async function createNewBusiness(event) {
+    setBusinessInfo();
+
     const form = event.target;
-    const formData = new FormData(form);
-    // const { name, address, phone, website,
-    //        category, description} = businessInfo;
 
     event.preventDefault();
+
+    const formData = new FormData(form);
 
     try {
       
@@ -52,22 +53,29 @@ const CreateBusiness = () => {
         }
       }).result;
 
+      console.log("Converted Image to key and uploaded to s3");
+      console.log('Uploaded key:', key); 
+
     const newBusinessDetails = {
-      id: uuid(),
       name: formData.get("name"),
-      address: formData.get("address"),
       phone: formData.get("phone"),
+      address: formData.get("address"),
       website: formData.get("website"),
       category: formData.get("category"),
       description: formData.get("description"),
       businessImagePath: key,
-      appointments: null 
+      appointments: [] 
     };
-    
-    const newBusiness = await client.graphql({
+
+    console.log("Populated business details");
+  
+    await client.graphql({
       query: createBusiness,
       variables: { input: newBusinessDetails }
     });
+
+
+    console.log("Uploaded business details");
 
       console.log('Succeeded: ', key);
     } catch (error) {
@@ -89,6 +97,7 @@ const CreateBusiness = () => {
             labelHidden
             variation="quiet"
             required
+            autocomplete="organization"
           />
           <TextField
             name="phone"
@@ -97,6 +106,7 @@ const CreateBusiness = () => {
             labelHidden
             variation="quiet"
             required
+            autocomplete="tel"
           />
           <TextField
             name="address"
@@ -105,6 +115,7 @@ const CreateBusiness = () => {
             labelHidden
             variation="quiet"
             required
+            autocomplete="street-address"
           />
           <TextField
             name="website"
@@ -113,6 +124,7 @@ const CreateBusiness = () => {
             labelHidden
             variation="quiet"
             required
+            autocomplete="url"
           />
           <TextField
             name="category"
@@ -121,6 +133,7 @@ const CreateBusiness = () => {
             labelHidden
             variation="quiet"
             required
+            autocomplete="category"
           />
           <TextField
             name="description"
@@ -129,6 +142,7 @@ const CreateBusiness = () => {
             labelHidden
             variation="quiet"
             required
+            autocomplete="description"
           />
           <TextField
             name="Image"
@@ -140,54 +154,16 @@ const CreateBusiness = () => {
             InputLabelProps={{ shrink: true }}
             variation="quiet"
             required
+            autocomplete="off" // Disable autocomplete for file input
             
-          
           />
           <Button type="submit" variation="primary">
             Create Business
           </Button>
         </Flex>
       </View>
-
-
-
     </div>
   );
 };
 
-export default CreateBusiness ;
-
-  // // Function to handle form input changes
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setBusinessInfo((prevInfo) => ({
-  //     ...prevInfo,
-  //     [name]: value,
-  //   }));
-  // };
-
-  //   // Function to handle image upload
-  //   const handleImageChange = (e) => {
-  //     const imageFile = e.target.files[0];
-  //     setBusinessInfo((prevInfo) => ({
-  //       ...prevInfo,
-  //       image: imageFile,
-  //     }));
-  //   };
-
-  // // Function to handle form submission
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Add logic to submit business data to backend or perform other actions
-  //   console.log('Business information:', businessInfo);
-  //   // Reset form fields after submission
-  //   setBusinessInfo({
-  //     name: '',
-  //     address: '',
-  //     phone: '',
-  //     website: '',
-  //     category: '',
-  //     description: '',
-  //     businessImagePath: null, // Add image field
-  //   });
-  // };
+export default CreateBusiness;

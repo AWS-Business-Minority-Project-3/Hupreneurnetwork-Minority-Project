@@ -57,14 +57,14 @@ export default function BusinessCreateForm(props) {
     setErrors({});
   };
   const validations = {
-    name: [{ type: "Required" }],
-    phone: [{ type: "Required" }],
-    email: [{ type: "Required" }],
-    address: [{ type: "Required" }],
-    website: [{ type: "Required" }],
-    category: [{ type: "Required" }],
-    description: [{ type: "Required" }],
-    businessImagePath: [{ type: "Required" }],
+    name: [],
+    phone: [],
+    email: [],
+    address: [],
+    website: [],
+    category: [],
+    description: [],
+    businessImagePath: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -155,7 +155,7 @@ export default function BusinessCreateForm(props) {
     >
       <TextField
         label="Name"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={name}
         onChange={(e) => {
@@ -186,7 +186,7 @@ export default function BusinessCreateForm(props) {
       ></TextField>
       <TextField
         label="Phone"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={phone}
         onChange={(e) => {
@@ -217,7 +217,7 @@ export default function BusinessCreateForm(props) {
       ></TextField>
       <TextField
         label="Email"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={email}
         onChange={(e) => {
@@ -248,7 +248,7 @@ export default function BusinessCreateForm(props) {
       ></TextField>
       <TextField
         label="Address"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={address}
         onChange={(e) => {
@@ -279,7 +279,7 @@ export default function BusinessCreateForm(props) {
       ></TextField>
       <TextField
         label="Website"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={website}
         onChange={(e) => {
@@ -310,7 +310,7 @@ export default function BusinessCreateForm(props) {
       ></TextField>
       <TextField
         label="Category"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={category}
         onChange={(e) => {
@@ -341,7 +341,7 @@ export default function BusinessCreateForm(props) {
       ></TextField>
       <TextField
         label="Description"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={description}
         onChange={(e) => {
@@ -372,7 +372,7 @@ export default function BusinessCreateForm(props) {
       ></TextField>
       <TextField
         label="Business image path"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={businessImagePath}
         onChange={(e) => {

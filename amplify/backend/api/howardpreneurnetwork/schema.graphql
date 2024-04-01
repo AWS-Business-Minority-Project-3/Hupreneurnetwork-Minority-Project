@@ -22,16 +22,16 @@ type BusinessOwnerProfile {
   appointments: [Appointment]
 }
 
-type Business @model{
+type Business @model @auth(rules: [{ allow: public }]) {
   id: ID!
-  name: String!
-  phone: String!
-  email: String!
-  address: String!
-  website: String!
-  category: String!
-  description: String!
-  businessImagePath: String!
+  name: String
+  phone: String
+  email: String
+  address: String
+  website: String
+  category: String
+  description: String
+  businessImagePath: String
   appointments: [Appointment]
   
 }
