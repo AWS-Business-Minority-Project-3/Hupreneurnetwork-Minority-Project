@@ -23,6 +23,7 @@ export default function BusinessCreateForm(props) {
     ...rest
   } = props;
   const initialValues = {
+    userId: "",
     name: "",
     phone: "",
     email: "",
@@ -32,6 +33,7 @@ export default function BusinessCreateForm(props) {
     description: "",
     businessImagePath: "",
   };
+  const [userId, setUserId] = React.useState(initialValues.userId);
   const [name, setName] = React.useState(initialValues.name);
   const [phone, setPhone] = React.useState(initialValues.phone);
   const [email, setEmail] = React.useState(initialValues.email);
@@ -46,6 +48,7 @@ export default function BusinessCreateForm(props) {
   );
   const [errors, setErrors] = React.useState({});
   const resetStateValues = () => {
+    setUserId(initialValues.userId);
     setName(initialValues.name);
     setPhone(initialValues.phone);
     setEmail(initialValues.email);
@@ -57,14 +60,15 @@ export default function BusinessCreateForm(props) {
     setErrors({});
   };
   const validations = {
-    name: [{ type: "Required" }],
-    phone: [{ type: "Required" }],
-    email: [{ type: "Required" }],
-    address: [{ type: "Required" }],
-    website: [{ type: "Required" }],
-    category: [{ type: "Required" }],
-    description: [{ type: "Required" }],
-    businessImagePath: [{ type: "Required" }],
+    userId: [],
+    name: [],
+    phone: [],
+    email: [],
+    address: [],
+    website: [],
+    category: [],
+    description: [],
+    businessImagePath: [],
   };
   const runValidationTasks = async (
     fieldName,
@@ -92,6 +96,7 @@ export default function BusinessCreateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
+          userId,
           name,
           phone,
           email,
@@ -154,14 +159,47 @@ export default function BusinessCreateForm(props) {
       {...rest}
     >
       <TextField
+        label="User id"
+        isRequired={false}
+        isReadOnly={false}
+        value={userId}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              userId: value,
+              name,
+              phone,
+              email,
+              address,
+              website,
+              category,
+              description,
+              businessImagePath,
+            };
+            const result = onChange(modelFields);
+            value = result?.userId ?? value;
+          }
+          if (errors.userId?.hasError) {
+            runValidationTasks("userId", value);
+          }
+          setUserId(value);
+        }}
+        onBlur={() => runValidationTasks("userId", userId)}
+        errorMessage={errors.userId?.errorMessage}
+        hasError={errors.userId?.hasError}
+        {...getOverrideProps(overrides, "userId")}
+      ></TextField>
+      <TextField
         label="Name"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={name}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name: value,
               phone,
               email,
@@ -186,13 +224,14 @@ export default function BusinessCreateForm(props) {
       ></TextField>
       <TextField
         label="Phone"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={phone}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name,
               phone: value,
               email,
@@ -217,13 +256,14 @@ export default function BusinessCreateForm(props) {
       ></TextField>
       <TextField
         label="Email"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={email}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name,
               phone,
               email: value,
@@ -248,13 +288,14 @@ export default function BusinessCreateForm(props) {
       ></TextField>
       <TextField
         label="Address"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={address}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name,
               phone,
               email,
@@ -279,13 +320,14 @@ export default function BusinessCreateForm(props) {
       ></TextField>
       <TextField
         label="Website"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={website}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name,
               phone,
               email,
@@ -310,13 +352,14 @@ export default function BusinessCreateForm(props) {
       ></TextField>
       <TextField
         label="Category"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={category}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name,
               phone,
               email,
@@ -341,13 +384,14 @@ export default function BusinessCreateForm(props) {
       ></TextField>
       <TextField
         label="Description"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={description}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name,
               phone,
               email,
@@ -372,13 +416,14 @@ export default function BusinessCreateForm(props) {
       ></TextField>
       <TextField
         label="Business image path"
-        isRequired={true}
+        isRequired={false}
         isReadOnly={false}
         value={businessImagePath}
         onChange={(e) => {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name,
               phone,
               email,

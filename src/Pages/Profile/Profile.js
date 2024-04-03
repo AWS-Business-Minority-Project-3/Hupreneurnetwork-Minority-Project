@@ -8,14 +8,10 @@ import { useNavigate } from 'react-router-dom';
 
 import { Card, Image, View, Heading, Flex, Badge, Text, Button, useTheme} from "@aws-amplify/ui-react";
 
-import { userProfile } from "../../graphql/queries";
-import { userCustomerProfile } from "../../graphql/queries";
-import { userBusinessOwnerProfile } from "../../graphql/queries";
+import { getProfile } from "../../graphql/queries";
 import { signOut } from 'aws-amplify/auth';
-import { Features2x2 } from '../../ui-components';
 import { Authenticator } from '@aws-amplify/ui-react';
 
-//import { Container } from 'react-bootstrap/Container';
 
 const client = generateClient();
 
@@ -24,12 +20,14 @@ const Profile = ({ reviews }) => {
 
     // State variables for managing active tab and user information
     const [activeTab, setActiveTab] = useState('summary');
+    const [profileInfo, setProfileInfo] = useState([])
     const [userInfo, setUserInfo] = useState({
         username:   'exampleuser',
         password: 'examplepassword',
         email: 'example@example.com',
         // Add more fields as needed
     });
+    
     const navigate = useNavigate();
     const { tokens } = useTheme();
 
@@ -48,7 +46,7 @@ const Profile = ({ reviews }) => {
         } catch (error) {
           console.log('error signing out: ', error);
         }
-      }
+      };
 
     // Function to handle tab change
     const handleTabChange = (tabName) => {
@@ -68,27 +66,14 @@ const Profile = ({ reviews }) => {
 
     };
 
-
+    async function fetchProfileReviews(){
+        
+    }
 
     async function fetchProfile(){
-        const apiData = await client.graphql({ query: userProfile });
         
-        if (apiData.business_owner){
-
-            const businessOwnerApiData = await client.graphql({ query: userBusinessOwnerProfile });
-            setUserInfo(businessOwnerApiData);
-        
-        } else if (!apiData.business_owner) {
-
-            const customerApiData = await client.graphql({ query: userCustomerProfile });
-            setUserInfo(customerApiData);
-        
-        } 
-        else {
-            // console.error("Unable to get profile data", error);
-            console.log("Unable to get profile data");
-        }
-
+        const profileFromAPI = await client.graphql({ query: getProfile });
+        setProfileInfo(profileFromAPI);
     }
 
     // Function to reset password

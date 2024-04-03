@@ -1,4 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, FormEvent } from "react";
+import { Button, Flex, Heading, Text, TextField, View, WithAuthenticatorProps, withAuthenticator, } from "@aws-amplify/ui-react";
+
+
+import "@aws-amplify/ui-react/styles.css";
+import { listNotes } from "../../graphql/queries";
+import { Amplify } from "aws-amplify";
+import { generateClient } from "aws-amplify/api";
+
+const client = generateClient();
 
 const BusinessView = ({ match }) => {
   const [showModal, setShowModal] = useState(false);
@@ -19,6 +28,19 @@ const BusinessView = ({ match }) => {
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' 
   };
 
+  //@@@@@@@@@@@@@@
+    const [notes, setNotes] = useState([]);
+
+  useEffect(() => {
+    fetchNotes();
+  }, []);
+
+  async function fetchNotes() {
+    const apiData = await client.graphql({ query: listNotes });
+    const notesFromAPI = apiData.data.listNotes.items;
+    setNotes(notesFromAPI);
+  }
+  
   return (
     <div>
       <h1>{business.name}</h1>

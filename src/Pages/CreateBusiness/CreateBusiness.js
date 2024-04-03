@@ -1,44 +1,34 @@
 // CreateBusinessPage.js
 
-import React, { useState, FormEvent } from 'react';
-//import { API, Storage } from 'aws-amplify';
-//import { graphqlOperation } from '@aws-amplify/api-graphql';
-import {Button, Flex, Heading, Text, TextField, View,} from "@aws-amplify/ui-react";
-import { Amplify } from 'aws-amplify';
+import React, { useState } from 'react';
+import {Button, Flex, TextField, View, Authenticator} from "@aws-amplify/ui-react";
 import { generateClient } from 'aws-amplify/api';
 import { uploadData } from 'aws-amplify/storage';
-
-import { createBusiness } from '../../graphql/mutations'
-
+import { getCurrentUser } from 'aws-amplify/auth';
+import { createBusiness } from '../../graphql/mutations';
 import {v4 as uuid} from 'uuid';
 
 const client = generateClient();
 
 const CreateBusiness = () => {
-  // State to manage form fields
-  const [businessInfo, setBusinessInfo] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    address: '',
-    website: '',
-    category: '',
-    description: '',
-    businessImagePath: null,
-    // Add more fields as needed
-  });
+
   const [businessProfileImage, setBusinessProfileImage] = useState("");
 
   async function createNewBusiness(event) {
+
     const form = event.target;
-    const formData = new FormData(form);
-    // const { name, address, phone, website,
-    //        category, description} = businessInfo;
 
     event.preventDefault();
 
+    const formData = new FormData(form);
     try {
       
+      // Get the user making the request
+      const { username, userId, signInDetails } = await getCurrentUser();
+      console.log(`The username: ${username}`);
+      console.log(`The userId: ${userId}`);
+      console.log(`The signInDetails: ${signInDetails}`);
+
       // Converting image file into blob
       const imageData = new Blob([businessProfileImage], {type: 'image/png'});
       console.log("Converted Image to blob");
@@ -52,22 +42,29 @@ const CreateBusiness = () => {
         }
       }).result;
 
+      console.log("Converted Image to key and uploaded to s3");
+      console.log('Uploaded key:', key); 
+
     const newBusinessDetails = {
-      id: uuid(),
+      userId: userId,
       name: formData.get("name"),
-      address: formData.get("address"),
       phone: formData.get("phone"),
+      address: formData.get("address"),
       website: formData.get("website"),
       category: formData.get("category"),
       description: formData.get("description"),
       businessImagePath: key,
-      appointments: null 
+      //appointments: [] 
     };
-    
-    const newBusiness = await client.graphql({
+
+    console.log("Populated business details");
+  
+    await client.graphql({
       query: createBusiness,
       variables: { input: newBusinessDetails }
     });
+
+    console.log("Uploaded business details");
 
       console.log('Succeeded: ', key);
     } catch (error) {
@@ -76,6 +73,7 @@ const CreateBusiness = () => {
   }
 
   return (
+    <Authenticator loginMechanism={['email']}>
     <div>
       <h2>Create a New Business</h2>
       
@@ -89,6 +87,7 @@ const CreateBusiness = () => {
             labelHidden
             variation="quiet"
             required
+            autocomplete="organization"
           />
           <TextField
             name="phone"
@@ -97,6 +96,7 @@ const CreateBusiness = () => {
             labelHidden
             variation="quiet"
             required
+            autocomplete="tel"
           />
           <TextField
             name="address"
@@ -105,6 +105,7 @@ const CreateBusiness = () => {
             labelHidden
             variation="quiet"
             required
+            autocomplete="street-address"
           />
           <TextField
             name="website"
@@ -113,6 +114,7 @@ const CreateBusiness = () => {
             labelHidden
             variation="quiet"
             required
+            autocomplete="url"
           />
           <TextField
             name="category"
@@ -121,6 +123,7 @@ const CreateBusiness = () => {
             labelHidden
             variation="quiet"
             required
+            autocomplete="category"
           />
           <TextField
             name="description"
@@ -129,6 +132,7 @@ const CreateBusiness = () => {
             labelHidden
             variation="quiet"
             required
+            autocomplete="description"
           />
           <TextField
             name="Image"
@@ -136,58 +140,20 @@ const CreateBusiness = () => {
             label="Note Image"
             labelHidden
             type="file"
-            onChange={setBusinessProfileImage}
             InputLabelProps={{ shrink: true }}
             variation="quiet"
             required
+            autocomplete="off" // Disable autocomplete for file input
             
-          
           />
           <Button type="submit" variation="primary">
             Create Business
           </Button>
         </Flex>
       </View>
-
-
-
     </div>
+    </Authenticator>
   );
 };
 
-export default CreateBusiness ;
-
-  // // Function to handle form input changes
-  // const handleChange = (e) => {
-  //   const { name, value } = e.target;
-  //   setBusinessInfo((prevInfo) => ({
-  //     ...prevInfo,
-  //     [name]: value,
-  //   }));
-  // };
-
-  //   // Function to handle image upload
-  //   const handleImageChange = (e) => {
-  //     const imageFile = e.target.files[0];
-  //     setBusinessInfo((prevInfo) => ({
-  //       ...prevInfo,
-  //       image: imageFile,
-  //     }));
-  //   };
-
-  // // Function to handle form submission
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Add logic to submit business data to backend or perform other actions
-  //   console.log('Business information:', businessInfo);
-  //   // Reset form fields after submission
-  //   setBusinessInfo({
-  //     name: '',
-  //     address: '',
-  //     phone: '',
-  //     website: '',
-  //     category: '',
-  //     description: '',
-  //     businessImagePath: null, // Add image field
-  //   });
-  // };
+export default CreateBusiness;
