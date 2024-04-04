@@ -11,7 +11,8 @@ import { Card, Image, View, Heading, Flex, Badge, Text, Button, useTheme} from "
 import { getProfile } from "../../graphql/queries";
 import { signOut } from 'aws-amplify/auth';
 import { Authenticator } from '@aws-amplify/ui-react';
-
+import { listReviews } from "../../graphql/queries";
+import { getCurrentUser } from 'aws-amplify/auth';
 
 const client = generateClient();
 
@@ -20,6 +21,7 @@ const Profile = ({ reviews }) => {
 
     // State variables for managing active tab and user information
     const [activeTab, setActiveTab] = useState('summary');
+    const [profileReviews, setProfileReviews] = useState([ ])
     const [profileInfo, setProfileInfo] = useState([])
     const [userInfo, setUserInfo] = useState({
         username:   'exampleuser',
@@ -27,12 +29,11 @@ const Profile = ({ reviews }) => {
         email: 'example@example.com',
         // Add more fields as needed
     });
-    
     const navigate = useNavigate();
     const { tokens } = useTheme();
 
     useEffect(() => {
-        fetchProfile();
+        fetchProfileReviews();
     }, []);
 
 
@@ -67,7 +68,12 @@ const Profile = ({ reviews }) => {
     };
 
     async function fetchProfileReviews(){
-        
+        // Get the user making the request
+        const { username, userId, signInDetails } = await getCurrentUser();
+        console.log(`The userId: ${userId}`);
+        const apiReviewData = await client.graphql({ query: listReviews, variables: { filter: { userId: { eq: userId } } }  });
+        const reviewsFromAPI = apiReviewData.data.listReviews.items;
+        setProfileReviews(reviewsFromAPI)
     }
 
     async function fetchProfile(){
@@ -146,39 +152,41 @@ const Profile = ({ reviews }) => {
                         backgroundColor={tokens.colors.background.secondary}
                         padding={tokens.space.medium}
                         >
-                        <Card>
-                            <Flex direction="row" alignItems="flex-start">
-                            <Image
-                                alt="Road to milford sound"
-                                src=""
-                                width="33%"
-                            />
-                            <Flex
-                                direction="column"
-                                alignItems="flex-start"
-                                gap={tokens.space.xs}
-                            >
-                                <Flex>
-                                <Badge size="small" variation="info">
-                                    Plus
-                                </Badge>
-                                <Badge size="small" variation="success">
-                                    Verified
-                                </Badge>
+                        {profileReviews.map((reviews) => (
+                            <Card>
+                                <Flex direction="row" alignItems="flex-start">
+                                {/* <Image
+                                    alt="Road to milford sound"
+                                    src=""
+                                    width="33%"
+                                /> */}
+                                <Flex
+                                    direction="column"
+                                    alignItems="flex-start"
+                                    gap={tokens.space.xs}
+                                >
+                                    <Flex>
+                                    <Badge size="small" variation="info">
+                                        Plus
+                                    </Badge>
+                                    <Badge size="small" variation="success">
+                                        Verified
+                                    </Badge>
+                                    </Flex>
+
+                                    <Heading level={5}>
+                                    {reviews.title}
+                                    </Heading>
+
+                                    <Text as="span">
+                                    {reviews.reviewText}
+                                    </Text>
+                                    {/* <Button variation="primary">Book it</Button> */}
                                 </Flex>
+                                </Flex>
+                            </Card>
+                        ))}
 
-                                <Heading level={5}>
-                                New Zealand White Water Outdoor Adventure
-                                </Heading>
-
-                                <Text as="span">
-                                Join us on this beautiful outdoor adventure through the glittering
-                                rivers through the snowy peaks on New Zealand.
-                                </Text>
-                                <Button variation="primary">Book it</Button>
-                            </Flex>
-                            </Flex>
-                        </Card>
                     </View>
                         {/* {reviews.map((review, index) => (
                         <Review key={index} review={review} />
