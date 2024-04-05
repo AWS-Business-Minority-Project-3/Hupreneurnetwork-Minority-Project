@@ -25,6 +25,7 @@ export default function BusinessUpdateForm(props) {
     ...rest
   } = props;
   const initialValues = {
+    userId: "",
     name: "",
     phone: "",
     email: "",
@@ -34,6 +35,7 @@ export default function BusinessUpdateForm(props) {
     description: "",
     businessImagePath: "",
   };
+  const [userId, setUserId] = React.useState(initialValues.userId);
   const [name, setName] = React.useState(initialValues.name);
   const [phone, setPhone] = React.useState(initialValues.phone);
   const [email, setEmail] = React.useState(initialValues.email);
@@ -51,6 +53,7 @@ export default function BusinessUpdateForm(props) {
     const cleanValues = businessRecord
       ? { ...initialValues, ...businessRecord }
       : initialValues;
+    setUserId(cleanValues.userId);
     setName(cleanValues.name);
     setPhone(cleanValues.phone);
     setEmail(cleanValues.email);
@@ -78,6 +81,7 @@ export default function BusinessUpdateForm(props) {
   }, [idProp, businessModelProp]);
   React.useEffect(resetStateValues, [businessRecord]);
   const validations = {
+    userId: [],
     name: [],
     phone: [],
     email: [],
@@ -113,6 +117,7 @@ export default function BusinessUpdateForm(props) {
       onSubmit={async (event) => {
         event.preventDefault();
         let modelFields = {
+          userId: userId ?? null,
           name: name ?? null,
           phone: phone ?? null,
           email: email ?? null,
@@ -173,6 +178,38 @@ export default function BusinessUpdateForm(props) {
       {...rest}
     >
       <TextField
+        label="User id"
+        isRequired={false}
+        isReadOnly={false}
+        value={userId}
+        onChange={(e) => {
+          let { value } = e.target;
+          if (onChange) {
+            const modelFields = {
+              userId: value,
+              name,
+              phone,
+              email,
+              address,
+              website,
+              category,
+              description,
+              businessImagePath,
+            };
+            const result = onChange(modelFields);
+            value = result?.userId ?? value;
+          }
+          if (errors.userId?.hasError) {
+            runValidationTasks("userId", value);
+          }
+          setUserId(value);
+        }}
+        onBlur={() => runValidationTasks("userId", userId)}
+        errorMessage={errors.userId?.errorMessage}
+        hasError={errors.userId?.hasError}
+        {...getOverrideProps(overrides, "userId")}
+      ></TextField>
+      <TextField
         label="Name"
         isRequired={false}
         isReadOnly={false}
@@ -181,6 +218,7 @@ export default function BusinessUpdateForm(props) {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name: value,
               phone,
               email,
@@ -212,6 +250,7 @@ export default function BusinessUpdateForm(props) {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name,
               phone: value,
               email,
@@ -243,6 +282,7 @@ export default function BusinessUpdateForm(props) {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name,
               phone,
               email: value,
@@ -274,6 +314,7 @@ export default function BusinessUpdateForm(props) {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name,
               phone,
               email,
@@ -305,6 +346,7 @@ export default function BusinessUpdateForm(props) {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name,
               phone,
               email,
@@ -336,6 +378,7 @@ export default function BusinessUpdateForm(props) {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name,
               phone,
               email,
@@ -367,6 +410,7 @@ export default function BusinessUpdateForm(props) {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name,
               phone,
               email,
@@ -398,6 +442,7 @@ export default function BusinessUpdateForm(props) {
           let { value } = e.target;
           if (onChange) {
             const modelFields = {
+              userId,
               name,
               phone,
               email,
