@@ -1,45 +1,34 @@
 // CreateBusinessPage.js
 
-import React, { useState, FormEvent } from 'react';
-//import { API, Storage } from 'aws-amplify';
-//import { graphqlOperation } from '@aws-amplify/api-graphql';
-import {Button, Flex, Heading, Text, TextField, View,} from "@aws-amplify/ui-react";
-import { Amplify } from 'aws-amplify';
+import React, { useState } from 'react';
+import {Button, Flex, TextField, View, Authenticator} from "@aws-amplify/ui-react";
 import { generateClient } from 'aws-amplify/api';
 import { uploadData } from 'aws-amplify/storage';
-
+import { getCurrentUser } from 'aws-amplify/auth';
 import { createBusiness } from '../../graphql/mutations';
-
 import {v4 as uuid} from 'uuid';
 
 const client = generateClient();
 
 const CreateBusiness = () => {
-  // State to manage form fields
-  const [businessInfo, setBusinessInfo] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    address: '',
-    website: '',
-    category: '',
-    description: '',
-    businessImagePath: '',
-    appointments: []
-  });
+
   const [businessProfileImage, setBusinessProfileImage] = useState("");
 
   async function createNewBusiness(event) {
-    setBusinessInfo();
 
     const form = event.target;
 
     event.preventDefault();
 
     const formData = new FormData(form);
-
     try {
       
+      // Get the user making the request
+      const { username, userId, signInDetails } = await getCurrentUser();
+      console.log(`The username: ${username}`);
+      console.log(`The userId: ${userId}`);
+      console.log(`The signInDetails: ${signInDetails}`);
+
       // Converting image file into blob
       const imageData = new Blob([businessProfileImage], {type: 'image/png'});
       console.log("Converted Image to blob");
@@ -57,6 +46,7 @@ const CreateBusiness = () => {
       console.log('Uploaded key:', key); 
 
     const newBusinessDetails = {
+      userId: userId,
       name: formData.get("name"),
       phone: formData.get("phone"),
       address: formData.get("address"),
@@ -64,7 +54,7 @@ const CreateBusiness = () => {
       category: formData.get("category"),
       description: formData.get("description"),
       businessImagePath: key,
-      appointments: [] 
+      //appointments: [] 
     };
 
     console.log("Populated business details");
@@ -73,7 +63,6 @@ const CreateBusiness = () => {
       query: createBusiness,
       variables: { input: newBusinessDetails }
     });
-
 
     console.log("Uploaded business details");
 
@@ -84,6 +73,7 @@ const CreateBusiness = () => {
   }
 
   return (
+    <Authenticator loginMechanism={['email']}>
     <div>
       <h2>Create a New Business</h2>
       
@@ -150,7 +140,6 @@ const CreateBusiness = () => {
             label="Note Image"
             labelHidden
             type="file"
-            onChange={setBusinessProfileImage}
             InputLabelProps={{ shrink: true }}
             variation="quiet"
             required
@@ -163,6 +152,7 @@ const CreateBusiness = () => {
         </Flex>
       </View>
     </div>
+    </Authenticator>
   );
 };
 

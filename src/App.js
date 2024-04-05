@@ -8,6 +8,7 @@ import { LeaveAReview } from './Pages/LeaveAReview/LeaveAReview';
 import { MarketingPage } from './Pages/MarketingPage';
 import BusinessView from './Pages/BusinessView/BusinessView';
 import CreateBusiness from './Pages/CreateBusiness/CreateBusiness';
+import CreateBusinessReview from'./Components/LeaveBusinessReview/LeaveBusinessReview'
 import './App.css'; // Import the CSS file
 
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="/marketingpage" element={<MarketingPage/>}/>
             <Route path="/businessview" element={<BusinessView/>}/>
             <Route path="/createbusiness" element={<CreateBusiness/>}/>
+            <Route path="/createbusinessreview" element={<CreateBusinessReview/>}/>
           </Routes>
         </main>
       </div>
