@@ -7,8 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "./utils";
-import { Button, Flex, Text, TextField } from "@aws-amplify/ui-react";
-import LogoWithText from "./LogoWithText";
+import { Button, Flex, Text, TextField, View } from "@aws-amplify/ui-react";
 export default function MarketingFooterBrand(props) {
   const { overrides, ...rest } = props;
   return (
@@ -21,7 +20,7 @@ export default function MarketingFooterBrand(props) {
       alignItems="center"
       position="relative"
       padding="40px 40px 40px 40px"
-      backgroundColor="rgba(233,249,252,1)"
+      backgroundColor="rgba(252,233,233,1)"
       {...getOverrideProps(overrides, "MarketingFooterBrand")}
       {...rest}
     >
@@ -179,7 +178,7 @@ export default function MarketingFooterBrand(props) {
             fontFamily="Inter"
             fontSize="16px"
             fontWeight="400"
-            color="rgba(4,125,149,1)"
+            color="rgba(149,4,4,1)"
             lineHeight="24px"
             textAlign="left"
             display="block"
@@ -201,7 +200,7 @@ export default function MarketingFooterBrand(props) {
             fontFamily="Inter"
             fontSize="16px"
             fontWeight="400"
-            color="rgba(4,125,149,1)"
+            color="rgba(149,4,4,1)"
             lineHeight="24px"
             textAlign="left"
             display="block"
@@ -223,7 +222,7 @@ export default function MarketingFooterBrand(props) {
             fontFamily="Inter"
             fontSize="16px"
             fontWeight="400"
-            color="rgba(4,125,149,1)"
+            color="rgba(149,4,4,1)"
             lineHeight="24px"
             textAlign="left"
             display="block"
@@ -245,7 +244,7 @@ export default function MarketingFooterBrand(props) {
             fontFamily="Inter"
             fontSize="16px"
             fontWeight="400"
-            color="rgba(4,125,149,1)"
+            color="rgba(149,4,4,1)"
             lineHeight="24px"
             textAlign="left"
             display="block"
@@ -302,7 +301,7 @@ export default function MarketingFooterBrand(props) {
             fontFamily="Inter"
             fontSize="16px"
             fontWeight="400"
-            color="rgba(4,125,149,1)"
+            color="rgba(149,4,4,1)"
             lineHeight="24px"
             textAlign="left"
             display="block"
@@ -324,7 +323,7 @@ export default function MarketingFooterBrand(props) {
             fontFamily="Inter"
             fontSize="16px"
             fontWeight="400"
-            color="rgba(4,125,149,1)"
+            color="rgba(149,4,4,1)"
             lineHeight="24px"
             textAlign="left"
             display="block"
@@ -346,7 +345,7 @@ export default function MarketingFooterBrand(props) {
             fontFamily="Inter"
             fontSize="16px"
             fontWeight="400"
-            color="rgba(4,125,149,1)"
+            color="rgba(149,4,4,1)"
             lineHeight="24px"
             textAlign="left"
             display="block"
@@ -368,7 +367,7 @@ export default function MarketingFooterBrand(props) {
             fontFamily="Inter"
             fontSize="16px"
             fontWeight="400"
-            color="rgba(4,125,149,1)"
+            color="rgba(149,4,4,1)"
             lineHeight="24px"
             textAlign="left"
             display="block"
@@ -425,7 +424,7 @@ export default function MarketingFooterBrand(props) {
             fontFamily="Inter"
             fontSize="16px"
             fontWeight="400"
-            color="rgba(4,125,149,1)"
+            color="rgba(149,4,4,1)"
             lineHeight="24px"
             textAlign="left"
             display="block"
@@ -447,7 +446,7 @@ export default function MarketingFooterBrand(props) {
             fontFamily="Inter"
             fontSize="16px"
             fontWeight="400"
-            color="rgba(4,125,149,1)"
+            color="rgba(149,4,4,1)"
             lineHeight="24px"
             textAlign="left"
             display="block"
@@ -469,7 +468,7 @@ export default function MarketingFooterBrand(props) {
             fontFamily="Inter"
             fontSize="16px"
             fontWeight="400"
-            color="rgba(4,125,149,1)"
+            color="rgba(149,4,4,1)"
             lineHeight="24px"
             textAlign="left"
             display="block"
@@ -502,19 +501,11 @@ export default function MarketingFooterBrand(props) {
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "Frame 433")}
       >
-        <LogoWithText
+        <View
           width="127.88px"
           height="18.91px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          color="brand"
           {...getOverrideProps(overrides, "LogoWithText")}
-        ></LogoWithText>
+        ></View>
         <Text
           fontFamily="Inter"
           fontSize="16px"
