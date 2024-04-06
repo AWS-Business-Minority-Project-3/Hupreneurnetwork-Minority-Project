@@ -5,7 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { FlexProps, ImageProps, TextProps } from "@aws-amplify/ui-react";
+import { ImageProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -17,14 +17,11 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type TallCardOverridesProps = {
-    TallCard?: PrimitiveOverrideProps<FlexProps>;
-    "8eec085f-08f6-4b7b-b795-52c736f368ee 1"?: PrimitiveOverrideProps<ImageProps>;
-    "Text Grouping"?: PrimitiveOverrideProps<FlexProps>;
-    "Hybrid Lash Set"?: PrimitiveOverrideProps<TextProps>;
-    $99?: PrimitiveOverrideProps<TextProps>;
+export declare type Febd4c5faa409eb5d6bed1eb0b011c1OverridesProps = {
+    Febd4c5faa409eb5d6bed1eb0b011c1?: PrimitiveOverrideProps<ViewProps>;
+    "83febd4c-5faa-409e-b5d6-bed1eb0b011c 1"?: PrimitiveOverrideProps<ImageProps>;
 } & EscapeHatchProps;
-export declare type TallCardProps = React.PropsWithChildren<Partial<FlexProps> & {
-    overrides?: TallCardOverridesProps | undefined | null;
+export declare type Febd4c5faa409eb5d6bed1eb0b011c1Props = React.PropsWithChildren<Partial<ViewProps> & {
+    overrides?: Febd4c5faa409eb5d6bed1eb0b011c1OverridesProps | undefined | null;
 }>;
-export default function TallCard(props: TallCardProps): React.ReactElement;
+export default function Febd4c5faa409eb5d6bed1eb0b011c1(props: Febd4c5faa409eb5d6bed1eb0b011c1Props): React.ReactElement;

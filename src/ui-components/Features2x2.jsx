@@ -116,8 +116,8 @@ export default function Features2x2(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Feature A"
-              {...getOverrideProps(overrides, "Feature A")}
+              children="Shop Student Clothing Brands"
+              {...getOverrideProps(overrides, "Shop Student Clothing Brands")}
             ></Text>
             <Text
               fontFamily="Inter"
@@ -139,10 +139,10 @@ export default function Features2x2(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+              children="Support Black owned clothing brands around Howard Universities campus to find the coolest new clothes, shoes, and accessories."
               {...getOverrideProps(
                 overrides,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.29766596"
+                "Support Black owned clothing brands around Howard Universities campus to find the coolest new clothes, shoes, and accessories."
               )}
             ></Text>
           </Flex>
@@ -211,8 +211,8 @@ export default function Features2x2(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Feature B"
-              {...getOverrideProps(overrides, "Feature B")}
+              children="Get Hair Services"
+              {...getOverrideProps(overrides, "Get Hair Services")}
             ></Text>
             <Text
               fontFamily="Inter"
@@ -234,10 +234,10 @@ export default function Features2x2(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+              children="You are able to get anything from a haircut to getting braids and installs from reliable student entrepreneurs. There are plenty of reviews and testimonies that you can hear from students."
               {...getOverrideProps(
                 overrides,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.29766599"
+                "You are able to get anything from a haircut to getting braids and installs from reliable student entrepreneurs. There are plenty of reviews and testimonies that you can hear from students."
               )}
             ></Text>
           </Flex>
@@ -321,8 +321,8 @@ export default function Features2x2(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Feature C"
-              {...getOverrideProps(overrides, "Feature C")}
+              children="Get Your Nails Done"
+              {...getOverrideProps(overrides, "Get Your Nails Done")}
             ></Text>
             <Text
               fontFamily="Inter"
@@ -344,10 +344,10 @@ export default function Features2x2(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+              children="Level up your look with a fresh set of nails or lashes from the best techs in the game!"
               {...getOverrideProps(
                 overrides,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.29766603"
+                "Level up your look with a fresh set of nails or lashes from the best techs in the game!"
               )}
             ></Text>
           </Flex>
@@ -416,8 +416,8 @@ export default function Features2x2(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Feature D"
-              {...getOverrideProps(overrides, "Feature D")}
+              children="Get Plates of Food"
+              {...getOverrideProps(overrides, "Get Plates of Food")}
             ></Text>
             <Text
               fontFamily="Inter"
@@ -439,10 +439,10 @@ export default function Features2x2(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation."
+              children="If you are hungry and looking for a home cooked meal then ordering from our cooking entrepreneurs is the way to go."
               {...getOverrideProps(
                 overrides,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.29766606"
+                "If you are hungry and looking for a home cooked meal then ordering from our cooking entrepreneurs is the way to go."
               )}
             ></Text>
           </Flex>

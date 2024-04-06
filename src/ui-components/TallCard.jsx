@@ -14,7 +14,7 @@ export default function TallCard(props) {
     <Flex
       gap="8px"
       direction="column"
-      width="320px"
+      width="312px"
       height="unset"
       justifyContent="center"
       alignItems="flex-start"
@@ -25,18 +25,20 @@ export default function TallCard(props) {
       {...rest}
     >
       <Image
-        width="unset"
-        height="400px"
+        width="312px"
+        height="367px"
         display="block"
         gap="unset"
         alignItems="unset"
         justifyContent="unset"
         shrink="0"
-        alignSelf="stretch"
         position="relative"
         padding="0px 0px 0px 0px"
         objectFit="cover"
-        {...getOverrideProps(overrides, "image")}
+        {...getOverrideProps(
+          overrides,
+          "8eec085f-08f6-4b7b-b795-52c736f368ee 1"
+        )}
       ></Image>
       <Flex
         gap="8px"
