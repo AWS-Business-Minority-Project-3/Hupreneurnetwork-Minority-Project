@@ -1,0 +1,13 @@
+[
+    { "id": 1, "name": "Technology" },
+    { "id": 2, "name": "Food & Beverage" },
+    { "id": 3, "name": "Fashion" },
+    { "id": 4, "name": "Health & Wellness" },
+    { "id": 5, "name": "Automotive" },
+    { "id": 6, "name": "Home & Garden" },
+    { "id": 7, "name": "Travel & Tourism" },
+    { "id": 8, "name": "Entertainment" },
+    { "id": 9, "name": "Professional Services" },
+    { "id": 10, "name": "Education" }
+  ]
+  

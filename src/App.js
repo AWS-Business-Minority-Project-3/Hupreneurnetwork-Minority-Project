@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navigation from './Components/Navigation';
+import { NavBarHeader } from './Components/NavBarHeader';
 import Profile from './Pages/Profile/Profile';
 import Authentication from './Pages/Authentication/Authentication';
 import { CompanyXPage } from './Pages/Entrepreneur/Entrepreneur';
@@ -9,6 +10,8 @@ import { MarketingPage } from './Pages/MarketingPage';
 import BusinessView from './Pages/BusinessView/BusinessView';
 import CreateBusiness from './Pages/CreateBusiness/CreateBusiness';
 import CreateBusinessReview from'./Components/LeaveBusinessReview/LeaveBusinessReview'
+import BusinessOwnerOverview from './Pages/BusinessOwnerOverview/BusinessOwnerOverview';
+import CategoryView from './Pages/CategoryView/CategoryView';
 import './App.css'; // Import the CSS file
 
 
@@ -17,6 +20,7 @@ function App() {
     <Router>
       <div className="App">
         <Navigation />
+        <NavBarHeader/>
         <main className="App-content">
           <Routes>
             <Route path="/profile" element={<Profile />} />
@@ -27,6 +31,10 @@ function App() {
             <Route path="/businessview" element={<BusinessView/>}/>
             <Route path="/createbusiness" element={<CreateBusiness/>}/>
             <Route path="/createbusinessreview" element={<CreateBusinessReview/>}/>
+            <Route path="/businessowneroverview" element={<BusinessOwnerOverview/>}/>
+            <Route path="/categoryview" element={<CategoryView/>}/>
+
+
           </Routes>
         </main>
       </div>
