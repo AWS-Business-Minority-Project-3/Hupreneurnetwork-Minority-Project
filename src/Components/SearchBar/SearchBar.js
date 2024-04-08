@@ -1,19 +1,15 @@
-// Import necessary modules
 const express = require('express');
 const { useState, useEffect } = require('react');
 import { generateClient } from "aws-amplify/api";
 import { listBusinesses } from "../../graphql/queries";
 
-// Create an Express app
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
 
-// React component for the search bar
 function SearchBar() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
@@ -63,5 +59,4 @@ function SearchBar() {
   );
 }
 
-// Export the SearchBar component
 module.exports = SearchBar;
