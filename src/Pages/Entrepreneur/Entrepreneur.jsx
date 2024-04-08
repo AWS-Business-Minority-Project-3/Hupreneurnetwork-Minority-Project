@@ -31,10 +31,6 @@ export const CompanyXPage = () => {
         }
     };
 
-    // const handleAuthentication = () => {
-    //     navigate("/authentication");
-    // };
-
     const handleReviews = () => {
         navigate("/createbusinessreview");
     };

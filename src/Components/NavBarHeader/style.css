@@ -59,6 +59,9 @@
 
 .nav-bar-header .button-instance {
   flex: 0 0 auto !important;
+  background-color: #ffffff;
+  color: #0d1a26;
+  cursor: pointer;
 }
 
 .nav-bar-header .text-wrapper a {

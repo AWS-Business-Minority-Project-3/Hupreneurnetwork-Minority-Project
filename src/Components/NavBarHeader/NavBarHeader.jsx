@@ -12,13 +12,16 @@ import "./style.css";
 
 export const NavBarHeader = ({ className }) => {
 
-  async function handleLogin(){
-    try{
-      await signIn();
-    } catch (error) {
-      console.log('error signing in', error);
-    }
-  }
+  // async function handleLogin(){
+  //   try{
+  //     await signIn();
+  //   } catch (error) {
+  //     console.log('error signing in', error);
+  //   }
+  // }
+
+  const handleAuthentication = () => {
+  };
 
   return (
     <div className={`nav-bar-header ${className}`}>
@@ -30,8 +33,14 @@ export const NavBarHeader = ({ className }) => {
         <div className="text-wrapper"><Link to="/businessowneroverview">HU Business</Link></div>
       </div>
       <div className="actions">
-        <Button className="button-instance" isDisabled={false} onClick={handleLogin} label="Log in" size="default" variation="link" />
-        <Button className="button-instance" isDisabled={false} label="Sign up" size="default" variation="primary" />
+        {/* <Button className="button-instance" isDisabled={false} onClick={handleLogin} label="Log in" size="default" variation="link" />
+        <Button className="button-instance" isDisabled={false} label="Sign up" size="default" variation="primary" /> */}
+        <Link to="/login">
+          <Button className="button-instance" isDisabled={false} onClick={handleAuthentication} label="Log In" size="default" variation="link" />
+        </Link>
+        <Link to="/signup">
+          <Button className="button-instance" isDisabled={false} onClick={handleAuthentication} label="Sign Up" size="default" variation="primary" />
+        </Link>
       </div>
     </div>
   );
