@@ -1,30 +1,12 @@
+// Import necessary modules
 const express = require('express');
-const { useState } = require('react');
+const { useState, useEffect } = require('react');
+import { generateClient } from "aws-amplify/api";
+import { listBusinesses } from "../../graphql/queries";
 
+// Create an Express app
 const app = express();
 const PORT = process.env.PORT || 3000;
-
-// Sample data (replace with your actual data)
-const businesses = [
-  { id: 1, name: 'Business 1' },
-  { id: 2, name: 'Business 2' },
-  { id: 3, name: 'Business 3' },
-  // Add more businesses as needed
-];
-
-// Endpoint to get all businesses
-app.get('/api/businesses', (req, res) => {
-  res.json(businesses);
-});
-
-// Endpoint to search for businesses by name
-app.get('/api/businesses/search', (req, res) => {
-  const query = req.query.q.toLowerCase();
-  const results = businesses.filter((business) =>
-    business.name.toLowerCase().includes(query)
-  );
-  res.json(results);
-});
 
 // Start the server
 app.listen(PORT, () => {
@@ -36,10 +18,27 @@ function SearchBar() {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
 
+  useEffect(() => {
+    fetchBusiness();
+  }, []);
+
+  async function fetchBusiness() {
+    try {
+      const client = generateClient();
+      const apiBusinessData = await client.graphql({ query: listBusinesses });
+      const businessFromAPI = apiBusinessData.data.listBusinesses.items;
+      setResults(businessFromAPI);
+      console.log("Retrieved businesses", businessFromAPI);
+    } catch (error) {
+      console.error('Error fetching businesses:', error);
+    }
+  }
+
   const handleSearch = async () => {
     try {
-      const response = await fetch(`/api/businesses/search?q=${query}`);
-      const data = await response.json();
+      const client = generateClient();
+      const response = await client.graphql({ query: listBusinesses, variables: { filter: { name: { contains: query } } } });
+      const data = response.data.listBusinesses.items;
       setResults(data);
     } catch (error) {
       console.error('Error searching for businesses:', error);
