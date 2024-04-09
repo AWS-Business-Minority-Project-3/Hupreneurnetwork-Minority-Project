@@ -17,6 +17,9 @@
       },
       "storage": {
         "hustorage": {}
+      },
+      "api": {
+        "howardpreneurnetwork": {}
       }
     }
   }

@@ -36,6 +36,8 @@ export declare type ContactUsOverridesProps = {
     Twitter?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type ContactUsProps = React.PropsWithChildren<Partial<FlexProps> & {
+    profile?: any;
+} & {
     overrides?: ContactUsOverridesProps | undefined | null;
 }>;
 export default function ContactUs(props: ContactUsProps): React.ReactElement;

@@ -6,11 +6,11 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "./utils";
+import { getOverrideProps, useNavigateAction } from "./utils";
 import { Button, Flex, Image, Text } from "@aws-amplify/ui-react";
-import MyIcon from "./MyIcon";
 export default function ProfileCard(props) {
-  const { overrides, ...rest } = props;
+  const { profile, overrides, ...rest } = props;
+  const buttonOnClick = useNavigateAction({ type: "url", url: "/EditProfile" });
   return (
     <Flex
       gap="24px"
@@ -37,6 +37,7 @@ export default function ProfileCard(props) {
         borderRadius="160px"
         padding="0px 0px 0px 0px"
         objectFit="cover"
+        src={profile?.image}
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Flex
@@ -69,8 +70,29 @@ export default function ProfileCard(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Jaamine Bolden"
-          {...getOverrideProps(overrides, "Jaamine Bolden")}
+          children={profile?.first_name}
+          {...getOverrideProps(overrides, "Jasmine")}
+        ></Text>
+        <Text
+          fontFamily="Inter"
+          fontSize="20px"
+          fontWeight="700"
+          color="rgba(13,26,38,1)"
+          lineHeight="25px"
+          textAlign="center"
+          display="block"
+          direction="column"
+          justifyContent="unset"
+          width="unset"
+          height="unset"
+          gap="unset"
+          alignItems="unset"
+          shrink="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          whiteSpace="pre-wrap"
+          children={profile?.last_name}
+          {...getOverrideProps(overrides, "Bold")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -91,57 +113,8 @@ export default function ProfileCard(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Computer Science Baddie at Howard"
-          {...getOverrideProps(overrides, "Computer Science Baddie at Howard")}
-        ></Text>
-      </Flex>
-      <Flex
-        gap="16px"
-        direction="row"
-        width="unset"
-        height="unset"
-        justifyContent="flex-start"
-        alignItems="flex-start"
-        shrink="0"
-        position="relative"
-        padding="0px 0px 0px 0px"
-        {...getOverrideProps(overrides, "Followers")}
-      >
-        <MyIcon
-          width="24px"
-          height="24px"
-          display="block"
-          gap="unset"
-          alignItems="unset"
-          justifyContent="unset"
-          overflow="hidden"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          type="group"
-          {...getOverrideProps(overrides, "MyIcon")}
-        ></MyIcon>
-        <Text
-          fontFamily="Inter"
-          fontSize="16px"
-          fontWeight="400"
-          color="rgba(48,64,80,1)"
-          lineHeight="24px"
-          textAlign="center"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          letterSpacing="0.01px"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="99 Followers"
-          {...getOverrideProps(overrides, "99 Followers")}
+          children={profile?.email}
+          {...getOverrideProps(overrides, "Jasmine.bold@gmail.com")}
         ></Text>
       </Flex>
       <Button
@@ -152,7 +125,10 @@ export default function ProfileCard(props) {
         size="large"
         isDisabled={false}
         variation="primary"
-        children="View Profile"
+        children="Edit Profile"
+        onClick={() => {
+          buttonOnClick();
+        }}
         {...getOverrideProps(overrides, "Button")}
       ></Button>
     </Flex>

@@ -5,7 +5,8 @@
  **************************************************************************/
 
 import * as React from "react";
-import { ButtonProps, FlexProps, ImageProps, TextProps } from "@aws-amplify/ui-react";
+import { CreateBusProfileProps } from "./CreateBusProfile";
+import { FlexProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -17,18 +18,11 @@ export declare type Variant = {
     overrides: EscapeHatchProps;
 };
 export declare type PrimitiveOverrideProps<T> = Partial<T> & React.DOMAttributes<HTMLDivElement>;
-export declare type ProfileCardOverridesProps = {
-    ProfileCard?: PrimitiveOverrideProps<FlexProps>;
-    image?: PrimitiveOverrideProps<ImageProps>;
-    Name?: PrimitiveOverrideProps<FlexProps>;
-    Jasmine?: PrimitiveOverrideProps<TextProps>;
-    Bold?: PrimitiveOverrideProps<TextProps>;
-    "Jasmine.bold@gmail.com"?: PrimitiveOverrideProps<TextProps>;
-    Button?: PrimitiveOverrideProps<ButtonProps>;
+export declare type ViewBusProfileOverridesProps = {
+    ViewBusProfile?: PrimitiveOverrideProps<FlexProps>;
+    "Create Bus Profile"?: CreateBusProfileProps;
 } & EscapeHatchProps;
-export declare type ProfileCardProps = React.PropsWithChildren<Partial<FlexProps> & {
-    profile?: any;
-} & {
-    overrides?: ProfileCardOverridesProps | undefined | null;
+export declare type ViewBusProfileProps = React.PropsWithChildren<Partial<FlexProps> & {
+    overrides?: ViewBusProfileOverridesProps | undefined | null;
 }>;
-export default function ProfileCard(props: ProfileCardProps): React.ReactElement;
+export default function ViewBusProfile(props: ViewBusProfileProps): React.ReactElement;
