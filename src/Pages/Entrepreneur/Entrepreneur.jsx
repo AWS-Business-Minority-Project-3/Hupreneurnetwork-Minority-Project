@@ -1,52 +1,79 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Entrepreneur.css";
 
-const CompanyXPage = () => {
-  return (
-      <div className="company-x-page">
-          <div className="div">
-              <div className="overlap">
-                  <div className="text-wrapper">Company X</div>
-                  <img className="rating-star" alt="Rating star" src="rating-star-5.svg" />
-                  <img className="img" alt="Rating star" src="rating-star-4.svg" />
-                  <img className="rating-star-2" alt="Rating star" src="rating-star-1.svg" />
-                  <img className="rating-star-3" alt="Rating star" src="rating-star-6.svg" />
-                  <img className="rating-star-4" alt="Rating star" src="rating-star-7.svg" />
-              </div>
-              <div className="media" />
-              <div className="media-2" />
-              <div className="media-3" />
-              <div className="media-4" />
-              <div className="media-5" />
-              <div className="media-6" />
-              <div className="media-7" />
-              <div className="media-8" />
-              <div className="overlap-group">
-                  <div className="text-wrapper-2">Reviews</div>
-              </div>
-              <div className="overlap-group-2">
-                  <div className="log-in" />
-                  <div className="sign-up" />
-                  <img className="logo" alt="Logo" src="logo.svg" />
-                  <div className="overlap-2">
-                      <div className="div-2" />
-                      <div className="text-wrapper-3">Explore</div>
-                  </div>
-                  <div className="overlap-3">
-                      <div className="div-2" />
-                      <div className="text-wrapper-4">Categories</div>
-                  </div>
-              </div>
-              <div className="overlap-4">
-                  <img className="search-bar" alt="Search bar" src="search-bar.svg" />
-                  <div className="overlap-5">
-                      <div className="seach-button" />
-                      <img className="search-button" alt="Search button" src="search-button.svg" />
-                  </div>
-              </div>
-          </div>
-      </div>
-  );
-};
+export const CompanyXPage = () => {
+    const navigate = useNavigate();
+    const [showForm, setShowForm] = useState(false);
+    const [mediaItems, setMediaItems] = useState([]);
+    const [mediaFile, setMediaFile] = useState(null);
+    const [mediaTitle, setMediaTitle] = useState("");
 
-export default CompanyXPage;
+    const handleAddMedia = () => {
+        if (mediaFile && mediaTitle) {
+            const newMediaItem = {
+                file: URL.createObjectURL(mediaFile),
+                title: mediaTitle,
+                type: mediaFile.type.startsWith('image') ? 'image' : 'video',
+            } 
+            setMediaItems([...mediaItems, newMediaItem]);
+            setMediaFile(null);
+            setMediaTitle("");
+        } else {
+            alert("Please select a media file and enter a title.");
+        }
+    };
+
+    const handleMediaFileChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            setMediaFile(file);
+        }
+    };
+
+    const handleReviews = () => {
+        navigate("/createbusinessreview");
+    };
+
+    return (
+        <div className="company-x-page">
+            <div className="div">
+                <div className="overlap">
+                    <div className="company-name">Company X</div>
+                </div>
+                <button className="add-media-button" onClick={() => setShowForm(true)}>Add Media</button>
+                <button className="reviews" onClick={handleReviews}>Reviews</button>
+            </div>
+            {showForm && (
+                <div className="add-media-form">
+                    <h2>Add Media</h2>
+                    <input
+                        type="file"
+                        accept="image/*, video/*"
+                        onChange={handleMediaFileChange}
+                    />
+                    <input
+                        type="text"
+                        placeholder="Media Title"
+                        value={mediaTitle}
+                        onChange={(e) => setMediaTitle(e.target.value)}
+                    />
+                    <button onClick={handleAddMedia}>Add Media</button>
+                    <button onClick={() => setShowForm(false)}>Cancel</button>
+                </div>
+            )}
+            <div className="media-items">
+                {mediaItems.map((media, index) => (
+                    <div key={index} className="media-item">
+                        {media.type === 'image' ? (
+                            <img src={media.file} alt={media.title} />
+                        ) : (
+                            <video controls src={media.file} alt={media.title} />
+                        )}
+                        <div>{media.title}</div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};

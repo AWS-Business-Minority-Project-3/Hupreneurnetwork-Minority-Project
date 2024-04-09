@@ -1,43 +1,22 @@
 {
-  "dev": {
+  "main": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-howardpreneurnetwork-dev-210311-authRole",
-      "UnauthRoleArn": "arn:aws:iam::150247807464:role/amplify-howardpreneurnetwork-dev-210311-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::150247807464:role/amplify-howardpreneurnetwork-dev-210311-authRole",
+      "AuthRoleName": "amplify-howardpreneurnetwork-main-171652-authRole",
+      "UnauthRoleArn": "arn:aws:iam::150247807464:role/amplify-howardpreneurnetwork-main-171652-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::150247807464:role/amplify-howardpreneurnetwork-main-171652-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-howardpreneurnetwork-dev-210311-deployment",
-      "UnauthRoleName": "amplify-howardpreneurnetwork-dev-210311-unauthRole",
-      "StackName": "amplify-howardpreneurnetwork-dev-210311",
-      "StackId": "arn:aws:cloudformation:us-east-1:150247807464:stack/amplify-howardpreneurnetwork-dev-210311/0dcee0f0-c0a6-11ee-b1e2-0ebfc8b0e10d",
-      "AmplifyAppId": "d2jeij020jxfob"
+      "DeploymentBucketName": "amplify-howardpreneurnetwork-main-171652-deployment",
+      "UnauthRoleName": "amplify-howardpreneurnetwork-main-171652-unauthRole",
+      "StackName": "amplify-howardpreneurnetwork-main-171652",
+      "StackId": "arn:aws:cloudformation:us-east-1:150247807464:stack/amplify-howardpreneurnetwork-main-171652/ce2eeec0-ec5d-11ee-9b60-0affd5cd2841",
+      "AmplifyAppId": "d6mhxwk9u7g2z"
     },
     "categories": {
       "auth": {
         "howardpreneurnetwork0b3f594f": {}
-      },
-      "api": {
-        "howardpreneurnetwork": {}
       },
       "storage": {
         "hustorage": {}
-      }
-    }
-  },
-  "aprilstest": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-howardpreneurnetwork-aprilstest-154357-authRole",
-      "UnauthRoleArn": "arn:aws:iam::211848236428:role/amplify-howardpreneurnetwork-aprilstest-154357-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::211848236428:role/amplify-howardpreneurnetwork-aprilstest-154357-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-howardpreneurnetwork-aprilstest-154357-deployment",
-      "UnauthRoleName": "amplify-howardpreneurnetwork-aprilstest-154357-unauthRole",
-      "StackName": "amplify-howardpreneurnetwork-aprilstest-154357",
-      "StackId": "arn:aws:cloudformation:us-east-1:211848236428:stack/amplify-howardpreneurnetwork-aprilstest-154357/1d0b5e50-cd0c-11ee-9379-0e3f6f69cc95",
-      "AmplifyAppId": "d10z6638mh1gxp"
-    },
-    "categories": {
-      "auth": {
-        "howardpreneurnetwork0b3f594f": {}
       }
     }
   }

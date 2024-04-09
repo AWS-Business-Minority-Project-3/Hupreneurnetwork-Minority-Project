@@ -9,9 +9,14 @@ function Navigation() {
     return (
       <nav>
         <ul>
+          <li><Link to="/marketingpage">Home</Link></li>
           <li><Link to="/profile">Profile</Link></li>
           <li><Link to="/authentication">Authentication</Link></li>
           <li><Link to="/entrepreneur">Entrepreneur</Link></li>
+          <li><Link to="/businessview">BusinessView</Link></li>
+          <li><Link to="/createbusiness">CreateBusiness</Link></li>
+          <li><Link to="/createbusinessreview">Create A Review</Link></li>
+          <li><Link to="/businessowneroverview">Business Overview</Link></li>
         </ul>
       </nav>
     );

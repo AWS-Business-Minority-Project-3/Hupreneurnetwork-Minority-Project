@@ -6,7 +6,7 @@
   justify-content: space-between;
   padding: 16px 32px;
   position: relative;
-  width: 1440px;
+  width: 100%;
 }
 
 .nav-bar-header .frame {
@@ -59,4 +59,12 @@
 
 .nav-bar-header .button-instance {
   flex: 0 0 auto !important;
+  background-color: #ffffff;
+  color: #0d1a26;
+  cursor: pointer;
+}
+
+.nav-bar-header .text-wrapper a {
+  color: black;
+  /* Add any additional styles you want for the links */
 }
