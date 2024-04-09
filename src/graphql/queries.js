@@ -10,7 +10,6 @@ export const getProfile = /* GraphQL */ `
       email
       business {
         id
-        userId
         name
         phone
         email
@@ -54,7 +53,6 @@ export const getBusiness = /* GraphQL */ `
   query GetBusiness($id: ID!) {
     getBusiness(id: $id) {
       id
-      userId
       name
       phone
       email
@@ -78,7 +76,6 @@ export const listBusinesses = /* GraphQL */ `
     listBusinesses(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        userId
         name
         phone
         email

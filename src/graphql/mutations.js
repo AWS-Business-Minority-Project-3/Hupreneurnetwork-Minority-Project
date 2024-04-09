@@ -13,7 +13,6 @@ export const createProfile = /* GraphQL */ `
       email
       business {
         id
-        userId
         name
         phone
         email
@@ -44,7 +43,6 @@ export const updateProfile = /* GraphQL */ `
       email
       business {
         id
-        userId
         name
         phone
         email
@@ -75,7 +73,6 @@ export const deleteProfile = /* GraphQL */ `
       email
       business {
         id
-        userId
         name
         phone
         email
@@ -101,7 +98,6 @@ export const createBusiness = /* GraphQL */ `
   ) {
     createBusiness(input: $input, condition: $condition) {
       id
-      userId
       name
       phone
       email
@@ -123,7 +119,6 @@ export const updateBusiness = /* GraphQL */ `
   ) {
     updateBusiness(input: $input, condition: $condition) {
       id
-      userId
       name
       phone
       email
@@ -145,7 +140,6 @@ export const deleteBusiness = /* GraphQL */ `
   ) {
     deleteBusiness(input: $input, condition: $condition) {
       id
-      userId
       name
       phone
       email

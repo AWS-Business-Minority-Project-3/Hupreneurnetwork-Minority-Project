@@ -26,13 +26,15 @@ export declare type CreateBusProfileOverridesProps = {
     "Create User Profle"?: PrimitiveOverrideProps<TextProps>;
     Profile?: PrimitiveOverrideProps<FlexProps>;
     image?: PrimitiveOverrideProps<ImageProps>;
-    "Upload Image"?: PrimitiveOverrideProps<TextProps>;
+    TextField40206696?: PrimitiveOverrideProps<TextFieldProps>;
     Forms?: PrimitiveOverrideProps<FlexProps>;
     TextField3965783?: PrimitiveOverrideProps<TextFieldProps>;
     TextField3965784?: PrimitiveOverrideProps<TextFieldProps>;
+    TextField40055948?: PrimitiveOverrideProps<TextFieldProps>;
     TextField3965785?: PrimitiveOverrideProps<TextFieldProps>;
+    TextField40055982?: PrimitiveOverrideProps<TextFieldProps>;
+    TextField40056023?: PrimitiveOverrideProps<TextFieldProps>;
     TextField3965823?: PrimitiveOverrideProps<TextFieldProps>;
-    TextField3965830?: PrimitiveOverrideProps<TextFieldProps>;
     Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type CreateBusProfileProps = React.PropsWithChildren<Partial<FlexProps> & {

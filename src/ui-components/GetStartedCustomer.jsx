@@ -83,7 +83,7 @@ export default function GetStartedCustomer(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           objectFit="cover"
-          src="https://drive.google.com/file/d/1unv9hCkikmnuoe21hvaacZ6uyfTQHiIm/view?usp=sharing"
+          src="https://images.unsplash.com/photo-1492462543947-040389c4a66c?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           {...getOverrideProps(overrides, "Happy Howard Student Girl")}
         ></Image>
         <Text

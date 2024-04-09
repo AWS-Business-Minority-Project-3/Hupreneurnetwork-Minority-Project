@@ -6,10 +6,7 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { useState } from "react";
-import { generateClient } from "aws-amplify/api";
-import { createBusiness } from "../graphql/mutations";
-import { getOverrideProps } from "./utils";
+import { getOverrideProps, useNavigateAction } from "./utils";
 import MyIcon from "./MyIcon";
 import {
   Button,
@@ -20,27 +17,13 @@ import {
   TextField,
   View,
 } from "@aws-amplify/ui-react";
-const client = generateClient();
 export default function CreateUserProfile(props) {
-  const { overrides, ...rest } = props;
-  const [
-    textFieldThreeNineFourTwoFourOneFourFourValue,
-    setTextFieldThreeNineFourTwoFourOneFourFourValue,
-  ] = useState("");
-  const buttonOnClick = async () => {
-    await client.graphql({
-      query: createBusiness.replaceAll("__typename", ""),
-      variables: {
-        input: {
-          name: textFieldThreeNineFourTwoFourOneFourFourValue,
-        },
-      },
-    });
-  };
+  const { profile, overrides, ...rest } = props;
+  const buttonOnClick = useNavigateAction({ type: "url", url: "/ViewProfile" });
   return (
     <View
       width="696px"
-      height="728px"
+      height="556px"
       display="block"
       gap="unset"
       alignItems="unset"
@@ -55,7 +38,7 @@ export default function CreateUserProfile(props) {
         gap="24px"
         direction="column"
         width="696px"
-        height="unset"
+        height="535px"
         justifyContent="flex-start"
         alignItems="flex-start"
         position="absolute"
@@ -140,32 +123,22 @@ export default function CreateUserProfile(props) {
             objectFit="cover"
             {...getOverrideProps(overrides, "image")}
           ></Image>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(13,26,38,1)"
-            lineHeight="22px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            textDecoration="underline"
-            width="unset"
+          <TextField
+            width="479px"
             height="unset"
-            gap="unset"
-            alignItems="unset"
+            label="Image URL"
+            placeholder="www.image.com"
             shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Upload Image"
-            {...getOverrideProps(overrides, "Upload Image")}
-          ></Text>
+            size="default"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            {...getOverrideProps(overrides, "TextField40136390")}
+          ></TextField>
         </Flex>
         <View
           width="unset"
-          height="512px"
+          height="334px"
           display="block"
           gap="unset"
           alignItems="unset"
@@ -189,12 +162,6 @@ export default function CreateUserProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
-            value={textFieldThreeNineFourTwoFourOneFourFourValue}
-            onChange={(event) => {
-              setTextFieldThreeNineFourTwoFourOneFourFourValue(
-                event.target.value
-              );
-            }}
             {...getOverrideProps(overrides, "TextField39424144")}
           ></TextField>
           <Flex
@@ -238,41 +205,13 @@ export default function CreateUserProfile(props) {
             variation="default"
             {...getOverrideProps(overrides, "TextField29766923")}
           ></TextField>
-          <TextField
-            width="648px"
-            height="unset"
-            label="Birthday"
-            placeholder="01/01/2000"
-            position="absolute"
-            top="186px"
-            left="0px"
-            size="default"
-            isDisabled={false}
-            labelHidden={false}
-            variation="default"
-            {...getOverrideProps(overrides, "TextField29766924")}
-          ></TextField>
-          <TextField
-            width="648px"
-            height="unset"
-            label="Gender"
-            placeholder="Female"
-            position="absolute"
-            top="279px"
-            left="0px"
-            size="default"
-            isDisabled={false}
-            labelHidden={false}
-            variation="default"
-            {...getOverrideProps(overrides, "TextField3968846")}
-          ></TextField>
           <SwitchField
             width="201px"
             height="46px"
             label="Business Owner"
             position="absolute"
-            top="372px"
-            left="0px"
+            top="199px"
+            left="-9px"
             size="default"
             defaultChecked={true}
             isDisabled={false}
@@ -283,7 +222,7 @@ export default function CreateUserProfile(props) {
             width="unset"
             height="unset"
             position="absolute"
-            top="451px"
+            top="275px"
             left="9px"
             size="default"
             isDisabled={false}

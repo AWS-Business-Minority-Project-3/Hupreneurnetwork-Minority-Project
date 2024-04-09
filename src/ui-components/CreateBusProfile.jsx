@@ -6,17 +6,21 @@
 
 /* eslint-disable */
 import * as React from "react";
-import { getOverrideProps } from "./utils";
+import { getOverrideProps, useNavigateAction } from "./utils";
 import MyIcon from "./MyIcon";
 import { Button, Flex, Image, Text, TextField } from "@aws-amplify/ui-react";
 export default function CreateBusProfile(props) {
   const { overrides, ...rest } = props;
+  const buttonOnClick = useNavigateAction({
+    type: "url",
+    url: "/ViewBusinessProfile",
+  });
   return (
     <Flex
       gap="16px"
       direction="column"
       width="844px"
-      height="756px"
+      height="949px"
       justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
@@ -26,7 +30,7 @@ export default function CreateBusProfile(props) {
       {...rest}
     >
       <Flex
-        gap="24px"
+        gap="30px"
         direction="column"
         width="unset"
         height="unset"
@@ -114,34 +118,24 @@ export default function CreateBusProfile(props) {
             objectFit="cover"
             {...getOverrideProps(overrides, "image")}
           ></Image>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(13,26,38,1)"
-            lineHeight="22px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            textDecoration="underline"
-            width="unset"
+          <TextField
+            width="479px"
             height="unset"
-            gap="unset"
-            alignItems="unset"
+            label="Image URL"
+            placeholder="www.image.com"
             shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Upload Image"
-            {...getOverrideProps(overrides, "Upload Image")}
-          ></Text>
+            size="default"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            {...getOverrideProps(overrides, "TextField40206696")}
+          ></TextField>
         </Flex>
         <Flex
           gap="16px"
           direction="column"
           width="unset"
-          height="unset"
+          height="624px"
           justifyContent="flex-start"
           alignItems="flex-start"
           shrink="0"
@@ -153,12 +147,13 @@ export default function CreateBusProfile(props) {
           <TextField
             width="280px"
             height="unset"
-            placeholder="Cameron’s Cooking"
+            placeholder="Cameron's Cooking"
             shrink="0"
             size="default"
             isDisabled={false}
             labelHidden={false}
             variation="default"
+            label="Company Name"
             {...getOverrideProps(overrides, "TextField3965783")}
           ></TextField>
           <TextField
@@ -174,6 +169,44 @@ export default function CreateBusProfile(props) {
             {...getOverrideProps(overrides, "TextField3965784")}
           ></TextField>
           <TextField
+            width="280px"
+            height="unset"
+            label="Email"
+            placeholder="CameronsCooking@gmail.com"
+            shrink="0"
+            size="default"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            {...getOverrideProps(overrides, "TextField40055948")}
+          ></TextField>
+          <TextField
+            width="unset"
+            height="unset"
+            label="Address"
+            placeholder="123 Sherman Ave, Washington DC 20001"
+            shrink="0"
+            alignSelf="stretch"
+            size="default"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            {...getOverrideProps(overrides, "TextField3965785")}
+          ></TextField>
+          <TextField
+            width="unset"
+            height="unset"
+            label="Website"
+            placeholder="www.CameronsCooking.com"
+            shrink="0"
+            alignSelf="stretch"
+            size="default"
+            isDisabled={false}
+            labelHidden={false}
+            variation="default"
+            {...getOverrideProps(overrides, "TextField40055982")}
+          ></TextField>
+          <TextField
             width="unset"
             height="unset"
             label="Company Category"
@@ -184,7 +217,7 @@ export default function CreateBusProfile(props) {
             isDisabled={false}
             labelHidden={false}
             variation="default"
-            {...getOverrideProps(overrides, "TextField3965785")}
+            {...getOverrideProps(overrides, "TextField40056023")}
           ></TextField>
           <TextField
             width="unset"
@@ -199,19 +232,6 @@ export default function CreateBusProfile(props) {
             variation="default"
             {...getOverrideProps(overrides, "TextField3965823")}
           ></TextField>
-          <TextField
-            width="unset"
-            height="unset"
-            label="Address"
-            placeholder="123 Howard St, Washington D.C. 20001"
-            shrink="0"
-            alignSelf="stretch"
-            size="default"
-            isDisabled={false}
-            labelHidden={false}
-            variation="default"
-            {...getOverrideProps(overrides, "TextField3965830")}
-          ></TextField>
         </Flex>
         <Button
           width="unset"
@@ -221,6 +241,9 @@ export default function CreateBusProfile(props) {
           isDisabled={false}
           variation="primary"
           children="Save"
+          onClick={() => {
+            buttonOnClick();
+          }}
           {...getOverrideProps(overrides, "Button")}
         ></Button>
       </Flex>
