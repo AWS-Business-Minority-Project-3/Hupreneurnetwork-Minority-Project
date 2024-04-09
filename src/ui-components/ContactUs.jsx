@@ -17,7 +17,7 @@ import {
 } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function ContactUs(props) {
-  const { overrides, ...rest } = props;
+  const { profile, overrides, ...rest } = props;
   return (
     <Flex
       gap="24px"
@@ -49,7 +49,7 @@ export default function ContactUs(props) {
         <TextField
           width="unset"
           height="unset"
-          label="First name"
+          label={profile?.first_name}
           grow="1"
           shrink="1"
           basis="0"

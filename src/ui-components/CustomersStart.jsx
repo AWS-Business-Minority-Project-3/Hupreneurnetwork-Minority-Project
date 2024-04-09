@@ -60,7 +60,7 @@ export default function CustomersStart(props) {
         alignSelf="stretch"
         position="relative"
         padding="120px 120px 120px 120px"
-        backgroundColor="rgba(239,143,143,1)"
+        backgroundColor="rgba(252,233,233,1)"
         display="flex"
         {...getOverrideProps(overrides, "Left")}
       >

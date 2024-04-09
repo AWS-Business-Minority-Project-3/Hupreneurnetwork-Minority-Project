@@ -10,7 +10,6 @@ export const onCreateProfile = /* GraphQL */ `
       email
       business {
         id
-        userId
         name
         phone
         email
@@ -38,7 +37,6 @@ export const onUpdateProfile = /* GraphQL */ `
       email
       business {
         id
-        userId
         name
         phone
         email
@@ -66,7 +64,6 @@ export const onDeleteProfile = /* GraphQL */ `
       email
       business {
         id
-        userId
         name
         phone
         email
@@ -89,7 +86,6 @@ export const onCreateBusiness = /* GraphQL */ `
   subscription OnCreateBusiness($filter: ModelSubscriptionBusinessFilterInput) {
     onCreateBusiness(filter: $filter) {
       id
-      userId
       name
       phone
       email
@@ -108,7 +104,6 @@ export const onUpdateBusiness = /* GraphQL */ `
   subscription OnUpdateBusiness($filter: ModelSubscriptionBusinessFilterInput) {
     onUpdateBusiness(filter: $filter) {
       id
-      userId
       name
       phone
       email
@@ -127,7 +122,6 @@ export const onDeleteBusiness = /* GraphQL */ `
   subscription OnDeleteBusiness($filter: ModelSubscriptionBusinessFilterInput) {
     onDeleteBusiness(filter: $filter) {
       id
-      userId
       name
       phone
       email
