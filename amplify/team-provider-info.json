@@ -1,4 +1,25 @@
 {
+  "test": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hupreneurnetworkmino-test-6c15b-authRole",
+      "UnauthRoleArn": "arn:aws:iam::150247807464:role/amplify-hupreneurnetworkmino-test-6c15b-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::150247807464:role/amplify-hupreneurnetworkmino-test-6c15b-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-hupreneurnetworkmino-test-6c15b-deployment",
+      "UnauthRoleName": "amplify-hupreneurnetworkmino-test-6c15b-unauthRole",
+      "StackName": "amplify-hupreneurnetworkmino-test-6c15b",
+      "StackId": "arn:aws:cloudformation:us-east-1:150247807464:stack/amplify-hupreneurnetworkmino-test-6c15b/9ec99990-f5d7-11ee-9bb2-12ef8d00991b",
+      "AmplifyAppId": "d6mhxwk9u7g2z"
+    },
+    "categories": {
+      "auth": {
+        "HupreneurnetworkMinorityProject": {}
+      },
+      "storage": {
+        "hustorage": {}
+      }
+    }
+  },
   "main": {
     "awscloudformation": {
       "AuthRoleName": "amplify-howardpreneurnetwork-main-171652-authRole",
@@ -12,9 +33,14 @@
       "AmplifyAppId": "d6mhxwk9u7g2z"
     },
     "categories": {
+      "storage": {
+        "hustorage": {}
+      },
       "auth": {
+        "HupreneurnetworkMinorityProject": {},
         "howardpreneurnetwork0b3f594f": {}
       },
+
       "storage": {
         "hustorage": {}
       },
