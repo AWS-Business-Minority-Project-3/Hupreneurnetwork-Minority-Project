@@ -1,17 +1,42 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { generateClient } from "aws-amplify/api";
+import { getBusiness } from "../../graphql/queries";
 import "./Entrepreneur.css";
 
-export const CompanyXPage = () => {
+const client = generateClient();
+
+const CompanyXPage = () => {
     const navigate = useNavigate();
+    const { businessId } = useParams(); // Extract businessId from URL params
+    const [businessData, setBusinessData] = useState(null);
     const [showForm, setShowForm] = useState(false);
     const [mediaItems, setMediaItems] = useState([]);
     const [mediaFile, setMediaFile] = useState(null);
     const [mediaTitle, setMediaTitle] = useState("");
 
+    useEffect(() => {
+        fetchBusinessData();
+    }, [businessId]);
+
+    async function fetchBusinessData() {
+        try {
+            const apiBusinessData = await client.graphql({ query: getBusiness, variables: { id: businessId } });
+            const business = apiBusinessData.data.getBusiness;
+            setBusinessData(business);
+        } catch (error) {
+            console.error("Error fetching company data", error);
+        }
+    };
+
     const handleAddMedia = () => {
         if (mediaFile && mediaTitle) {
-            setMediaItems([...mediaItems, { imageUrl: URL.createObjectURL(mediaFile), title: mediaTitle }]);
+            const newMediaItem = {
+                file: URL.createObjectURL(mediaFile),
+                title: mediaTitle,
+                type: mediaFile.type.startsWith('image') ? 'image' : 'video',
+            } 
+            setMediaItems([...mediaItems, newMediaItem]);
             setMediaFile(null);
             setMediaTitle("");
         } else {
@@ -26,41 +51,22 @@ export const CompanyXPage = () => {
         }
     };
 
-    const handleAuthentication = () => {
-        navigate("/authentication");
+    const handleReviews = () => {
+        navigate("/createbusinessreview");
+        // navigate(`/entrepreneur/${businessId}/reviews`);
     };
 
     return (
         <div className="company-x-page">
-            <div className="div">
-                <div className="overlap">
-                    <div className="company-name">Company X</div>
-                </div>
-                <div className="media" />
-                <div className="media-2" />
-                <div className="media-3" />
-                <div className="media-4" />
-                <div className="media-5" />
-                <div className="media-6" />
-                <div className="media-7" />
-                <div className="media-8" />
-                <button className="add-media-button" onClick={() => setShowForm(true)}>Add Media</button>
-                <button className="reviews">Reviews</button>
-                <div className="overlap-group-2">
-                    <button className="log-in" onClick={handleAuthentication}>Log In</button>
-                    <button className="sign-up" onClick={handleAuthentication}>Sign Up</button>
-                    <img className="logo" alt="Logo" src="https://cdn.animaapp.com/projects/65b1c27c58133fdd7aa24185/releases/65cfd0fd8d67bc924f7ecd56/img/logo.svg" />
-                    <button className="explore-button">Explore</button>
-                    <button className="categories-button">Categories</button>
-                </div>
-                <div className="overlap-4">
-                    <img className="search-bar" alt="Search bar" src="https://cdn.animaapp.com/projects/65b1c27c58133fdd7aa24185/releases/65cfd0fd8d67bc924f7ecd56/img/search-bar-.svg" />
-                    <div className="overlap-5">
-                        <div className="seach-button" />
-                        <img className="search-button" alt="Search button" src="https://cdn.animaapp.com/projects/65b1c27c58133fdd7aa24185/releases/65cfd0fd8d67bc924f7ecd56/img/search-button.svg" />
+            {businessData && (
+                <div className="div" style={{ backgroundImage: `url(${businessData.businessImagePath})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+                    <div className="overlap">
+                        <div className="company-name">{businessData.name}</div>
                     </div>
+                    <button className="add-media-button" onClick={() => setShowForm(true)}>Add Media</button>
+                    <button className="reviews" onClick={handleReviews}>Reviews</button>
                 </div>
-            </div>
+            )}
             {showForm && (
                 <div className="add-media-form">
                     <h2>Add Media</h2>
@@ -79,16 +85,20 @@ export const CompanyXPage = () => {
                     <button onClick={() => setShowForm(false)}>Cancel</button>
                 </div>
             )}
-            <div>
-                <div className="media-items">
-                    {mediaItems.map((media, index) => (
-                        <div key={index} className="media-item">
-                            <img src={media.imageUrl} alt={media.title} />
-                            <div>{media.title}</div>
-                        </div>
-                    ))}
-                </div>
+            <div className="media-items">
+                {mediaItems.map((media, index) => (
+                    <div key={index} className="media-item">
+                        {media.type === 'image' ? (
+                            <img src={media.file} alt={media.title} />
+                        ) : (
+                            <video controls src={media.file} alt={media.title} />
+                        )}
+                        <div>{media.title}</div>
+                    </div>
+                ))}
             </div>
         </div>
     );
 };
+
+export default CompanyXPage;
