@@ -16,8 +16,9 @@ function CategoriesView() {
       type="grid"
       templateColumns="12fr 12fr 12fr 12fr 12fr"
       templateRows="12rem 12rem 12rem 12rem 12rem"
-      gap="20px"
+      gap="5px"
       wrap="nowrap"
+      background="none"
     >
       {(item, index) => (
         <Button key={index} variation="primary" isFullWidth>
@@ -25,9 +26,9 @@ function CategoriesView() {
             borderRadius="medium"
             maxWidth="20rem"
             variation="outlined"
+            style={{ backgroundColor: 'white', border: '1px solid grey' }}
           >
             <View padding="xs">
-              
               <Heading padding="medium">{item.title}</Heading>
             </View>
           </Card>
