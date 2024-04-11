@@ -12,8 +12,7 @@ import CreateBusiness from './Pages/CreateBusiness/CreateBusiness';
 import CreateBusinessReview from'./Components/LeaveBusinessReview/LeaveBusinessReview'
 import BusinessOwnerOverview from './Pages/BusinessOwnerOverview/BusinessOwnerOverview';
 import CategoryView from './Pages/CategoryView/CategoryView';
-import './App.css'; // Import the CSS file
-
+import './App.css';
 
 function App() {
   return (
