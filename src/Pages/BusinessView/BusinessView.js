@@ -26,12 +26,12 @@ const BusinessView = ({ match }) => {
     }
 
   return (
-
-    <Collection
+    <div style = {{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+      <Collection
       items={businesses}
       type="grid"
-      templateColumns="22fr 22fr 22fr 22fr 22fr"
-      templateRows="22rem 22rem 22rem 22rem 22rem"
+      templateColumns="22fr 22fr 22fr 22fr"
+      templateRows="22rem 22rem 22rem 22rem"
       //direction="row"
       gap="20px"
       wrap="nowrap"
@@ -40,13 +40,13 @@ const BusinessView = ({ match }) => {
         <Card
           key={index}
           borderRadius="medium"
-          width="300px" // Set fixed width for the card
+          width="400px" // Set fixed width for the card
           variation="outlined"
         >
-          <Image
+          {/* <Image
             src={`https://howardpreneurnetworkac918fdfec654a55b833b713884175800-traven.s3.amazonaws.com/public/${item.businessImagePath}`}
             alt="Glittering stream with old log, snowy mountain peaks tower over a green field."
-          />
+          /> */}
           <View padding="xs">
             <Flex justifyContent="center">
               <Badge
@@ -70,6 +70,8 @@ const BusinessView = ({ match }) => {
         </Card>
       )}
     </Collection>
+    </div>
+
   );
 };
 
