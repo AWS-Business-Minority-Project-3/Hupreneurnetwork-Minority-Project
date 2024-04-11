@@ -11,6 +11,7 @@ function CategoriesView() {
   }));
 
   return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
     <Collection
       items={items}
       type="grid"
@@ -35,6 +36,7 @@ function CategoriesView() {
         </Button>
       )}
     </Collection>
+  </div>
   );
 }
 

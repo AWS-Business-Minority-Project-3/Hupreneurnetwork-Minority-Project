@@ -49,6 +49,10 @@ const Profile = ({ reviews }) => {
         }
       };
 
+    const handleAnalyticsPageChange = () => {
+        navigate("/businessanalytics");
+    }
+
     // Function to handle tab change
     const handleTabChange = (tabName) => {
         setActiveTab(tabName);
@@ -96,6 +100,7 @@ const Profile = ({ reviews }) => {
                     <li className={activeTab === 'favorite' ? 'active' : ''} onClick={() => handleTabChange('favorite')}>Favorites</li> */}
                     <li className={activeTab === 'reviews' ? 'active' : ''} onClick={() => handleTabChange('reviews')}>Reviews</li>
                     <li className={activeTab === 'profile' ? 'active' : ''} onClick={() => handleTabChange('profile')}>Profile Details</li>
+                    <li className={activeTab === 'analytics' ? 'active' : ''} onClick={() => handleAnalyticsPageChange()}>Analytics</li>
                     {/* Add more tabs as needed */}
                 </ul>
             </div>
@@ -190,6 +195,17 @@ const Profile = ({ reviews }) => {
                     {/* Display the reviews custumer has made of passed buinesses */}
                 </div>
 
+                {/* Business Analytics */}
+                {/* <div className={`tab-content ${activeTab === 'analytics' ? 'show' : ''}`}>
+                <h2>Favorites</h2>
+                    <div className="business-grid">
+                        {favoriteBusinesses.map((business, index) => (
+                        <div key={index} className="business-square">
+                            {business.name}
+                        </div>
+                        ))}
+                    </div>
+                </div> */}
                 {/* Add more tab content sections here */}
             </div>
         </div>
