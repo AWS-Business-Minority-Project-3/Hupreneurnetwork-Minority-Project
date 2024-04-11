@@ -28,13 +28,12 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/authentication" element={<Authentication />} />
             <Route path="/entrepreneur/:businessId" element={<CompanyXPage />} />
-            <Route path="/entrepreneur/:businessId/leave-review" element={<ReviewForm />} />
+            <Route path="/entrepreneur/:businessId/leave-review" element={<CreateBusinessReview/>}/>
             <Route path="/entrepreneur/:businessId/reviews" element={<Reviews />} />
             <Route path="/LeaveAReview" element={<LeaveAReview/>}/>
             <Route path="/marketingpage" element={<MarketingPage/>}/>
             <Route path="/businessview" element={<BusinessView/>}/>
             <Route path="/createbusiness" element={<CreateBusiness/>}/>
-            <Route path="/createbusinessreview" element={<CreateBusinessReview/>}/>
             <Route path="/businessowneroverview" element={<BusinessOwnerOverview/>}/>
             <Route path="/categoryview" element={<CategoryView/>}/>
 
