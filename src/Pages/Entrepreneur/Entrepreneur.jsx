@@ -51,10 +51,13 @@ const CompanyXPage = () => {
         }
     };
 
-    const handleReviews = () => {
-        navigate("/createbusinessreview");
-        // navigate(`/entrepreneur/${businessId}/reviews`);
+    const handleNewReviews = () => {
+        navigate(`/entrepreneur/${businessId}/leave-review`);
     };
+
+    const handleSeeReviews = () => {
+        navigate(`/entrepreneur/${businessId}/reviews`)
+    }
 
     return (
         <div className="company-x-page">
@@ -64,7 +67,8 @@ const CompanyXPage = () => {
                         <div className="company-name">{businessData.name}</div>
                     </div>
                     <button className="add-media-button" onClick={() => setShowForm(true)}>Add Media</button>
-                    <button className="reviews" onClick={handleReviews}>Reviews</button>
+                    <button className="reviews" onClick={handleNewReviews}>Leave A Review</button>
+                    <button className="see-reviews" onClick={handleSeeReviews}>See Reviews</button>
                 </div>
             )}
             {showForm && (
