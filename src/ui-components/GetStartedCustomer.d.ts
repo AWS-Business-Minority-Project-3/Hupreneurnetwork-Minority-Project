@@ -24,7 +24,7 @@ export declare type GetStartedCustomerOverridesProps = {
     Customer?: PrimitiveOverrideProps<TextProps>;
     "Main Body"?: PrimitiveOverrideProps<FlexProps>;
     "Find college student black owned businesses on near Howard University"?: PrimitiveOverrideProps<TextProps>;
-    "If you are in need of a quality product or service any you reside near the illustrious Howard University, then look no further. HUEntrepenuer Network is the application for you. We are able to connect you with students business owners that will help you get a quality experience for a fraction of the price."?: PrimitiveOverrideProps<TextProps>;
+    "If you are in need of a quality product or service any you reside near the illustrious Howard University, then look no further. HU Link is the application for you. We are able to connect you with students business owners that will help you get a quality experience for a fraction of the price."?: PrimitiveOverrideProps<TextProps>;
     Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type GetStartedCustomerProps = React.PropsWithChildren<Partial<FlexProps> & {

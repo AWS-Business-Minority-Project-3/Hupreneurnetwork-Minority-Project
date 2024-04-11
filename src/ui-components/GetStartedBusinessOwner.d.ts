@@ -24,7 +24,7 @@ export declare type GetStartedBusinessOwnerOverridesProps = {
     "Business Owner"?: PrimitiveOverrideProps<TextProps>;
     "Main Body"?: PrimitiveOverrideProps<FlexProps>;
     "Build up your brand and gain a great community!"?: PrimitiveOverrideProps<TextProps>;
-    "HUEntrepenuer Network is a great way to grow your small business. We offer opportunities to connect with Howard students that will help give you a community of supporters."?: PrimitiveOverrideProps<TextProps>;
+    "HU Link is a great way to grow your small business. We offer opportunities to connect with Howard students that will help give you a community of supporters."?: PrimitiveOverrideProps<TextProps>;
     Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type GetStartedBusinessOwnerProps = React.PropsWithChildren<Partial<FlexProps> & {

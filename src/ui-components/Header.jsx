@@ -17,7 +17,7 @@ export default function Header(props) {
   const variants = [
     {
       overrides: {
-        "HUprenuer Network": {},
+        "HU Link": {},
         "Helping student businesses achieve success!": {},
         div39795608: {},
         div39795607: {},
@@ -92,8 +92,8 @@ export default function Header(props) {
             transform="rotate(0.46deg)"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="HUprenuer Network"
-            {...getOverrideProps(overrides, "HUprenuer Network")}
+            children="HU Link"
+            {...getOverrideProps(overrides, "HU Link")}
           ></Text>
           <Text
             fontFamily="Manrope"

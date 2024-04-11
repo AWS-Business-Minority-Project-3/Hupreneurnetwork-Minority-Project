@@ -21,7 +21,7 @@ export default function GetStartedBusinessOwner(props) {
         "Male Business Owner": {},
         "Business Owner": {},
         "Build up your brand and gain a great community!": {},
-        "HUEntrepenuer Network is a great way to grow your small business. We offer opportunities to connect with Howard students that will help give you a community of supporters.":
+        "HU Link is a great way to grow your small business. We offer opportunities to connect with Howard students that will help give you a community of supporters.":
           {},
         "Main Body": {},
         Button: {},
@@ -166,10 +166,10 @@ export default function GetStartedBusinessOwner(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="HUEntrepenuer Network is a great way to grow your small business. We offer opportunities to connect with Howard students that will help give you a community of supporters."
+            children="HU Link is a great way to grow your small business. We offer opportunities to connect with Howard students that will help give you a community of supporters."
             {...getOverrideProps(
               overrides,
-              "HUEntrepenuer Network is a great way to grow your small business. We offer opportunities to connect with Howard students that will help give you a community of supporters."
+              "HU Link is a great way to grow your small business. We offer opportunities to connect with Howard students that will help give you a community of supporters."
             )}
           ></Text>
         </Flex>
