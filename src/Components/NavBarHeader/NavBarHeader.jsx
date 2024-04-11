@@ -22,11 +22,14 @@ export const NavBarHeader = ({ className }) => {
         <div className="text-wrapper"><Link to="/businessowneroverview">HU For Business Owners</Link></div>
       </div>
       <div className="actions">
-        <Link to="/authentication">
+        {/* <Link to="/authentication">
         <Button className="button-instance" isDisabled={false} label="Log in" size="default" variation="link">Login</Button>
-        </Link>
-        <Link to="/authentication">
+        </Link> */}
+        {/* <Link to="/authentication">
         <Button className="button-instance" isDisabled={false} label="Sign up" size="default" variation="primary">Signup</Button>
+        </Link> */}
+        <Link to="/profile">
+        <Button className="button-instance" isDisabled={false} label="Sign up" size="default" variation="primary">Profile</Button>
         </Link>
       </div>
     </div>

@@ -109,7 +109,7 @@ const Profile = ({ reviews }) => {
             <div className="main-content">
                 {/* Summary Dashboard */}
                 <div className={`tab-content ${activeTab === 'summary' ? 'show' : ''}`}>
-                    <h2>Summary Dashboard</h2>
+                    {/* <h2>Summary Dashboard</h2> */}
                     {/* Overview Metrics */}
                     {/* Recent Activity */}
                 </div>
