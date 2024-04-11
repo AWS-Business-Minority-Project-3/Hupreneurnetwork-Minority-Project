@@ -21,7 +21,7 @@ export declare type HeaderOverridesProps = {
     Header?: PrimitiveOverrideProps<FlexProps>;
     div39795607?: PrimitiveOverrideProps<FlexProps>;
     div39795608?: PrimitiveOverrideProps<ViewProps>;
-    "HUprenuer Network"?: PrimitiveOverrideProps<TextProps>;
+    "HU Link"?: PrimitiveOverrideProps<TextProps>;
     "Helping student businesses achieve success!"?: PrimitiveOverrideProps<TextProps>;
 } & EscapeHatchProps;
 export declare type HeaderProps = React.PropsWithChildren<Partial<FlexProps> & {

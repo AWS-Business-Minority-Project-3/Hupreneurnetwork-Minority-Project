@@ -178,7 +178,7 @@ export default function Entrepenuer(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="HUEntrepenuer Network is a great way to be able and grow you community here and find a new community to market to. "
+              children="HU Link is a great way to be able and grow you community here and find a new community to market to. "
               {...getOverrideProps(overrides, "Body")}
             ></Text>
           </Flex>

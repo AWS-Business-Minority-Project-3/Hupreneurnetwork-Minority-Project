@@ -22,7 +22,7 @@ export default function GetStartedCustomer(props) {
         Customer: {},
         "Find college student black owned businesses on near Howard University":
           {},
-        "If you are in need of a quality product or service any you reside near the illustrious Howard University, then look no further. HUEntrepenuer Network is the application for you. We are able to connect you with students business owners that will help you get a quality experience for a fraction of the price.":
+        "If you are in need of a quality product or service any you reside near the illustrious Howard University, then look no further. HU Link is the application for you. We are able to connect you with students business owners that will help you get a quality experience for a fraction of the price.":
           {},
         "Main Body": {},
         Button: {},
@@ -167,10 +167,10 @@ export default function GetStartedCustomer(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="If you are in need of a quality product or service any you reside near the illustrious Howard University, then look no further. HUEntrepenuer Network is the application for you. We are able to connect you with students business owners that will help you get a quality experience for a fraction of the price."
+            children="If you are in need of a quality product or service any you reside near the illustrious Howard University, then look no further. HU Link is the application for you. We are able to connect you with students business owners that will help you get a quality experience for a fraction of the price."
             {...getOverrideProps(
               overrides,
-              "If you are in need of a quality product or service any you reside near the illustrious Howard University, then look no further. HUEntrepenuer Network is the application for you. We are able to connect you with students business owners that will help you get a quality experience for a fraction of the price."
+              "If you are in need of a quality product or service any you reside near the illustrious Howard University, then look no further. HU Link is the application for you. We are able to connect you with students business owners that will help you get a quality experience for a fraction of the price."
             )}
           ></Text>
         </Flex>
