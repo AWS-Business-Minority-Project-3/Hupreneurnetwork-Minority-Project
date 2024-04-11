@@ -91,9 +91,9 @@ const Profile = ({ reviews }) => {
             {/* Side navigation bar */}
             <div className="side-nav">
                 <ul>
-                    {/* <li className={activeTab === 'summary' ? 'active' : ''} onClick={() => handleTabChange('summary')}>Summary Dashboard</li> */}
-                    {/* <li className={activeTab === 'appointments' ? 'active' : ''} onClick={() => handleTabChange('appointments')}>Purchase History</li>
-                    <li className={activeTab === 'favorite' ? 'active' : ''} onClick={() => handleTabChange('favorite')}>Favorites</li> */}
+                    <li className={activeTab === 'summary' ? 'active' : ''} onClick={() => handleTabChange('summary')}>Summary Dashboard</li>
+                    <li className={activeTab === 'appointments' ? 'active' : ''} onClick={() => handleTabChange('appointments')}>Purchase History</li>
+                    <li className={activeTab === 'favorite' ? 'active' : ''} onClick={() => handleTabChange('favorite')}>Favorites</li>
                     <li className={activeTab === 'reviews' ? 'active' : ''} onClick={() => handleTabChange('reviews')}>Reviews</li>
                     <li className={activeTab === 'profile' ? 'active' : ''} onClick={() => handleTabChange('profile')}>Profile Details</li>
                     {/* Add more tabs as needed */}
@@ -127,18 +127,23 @@ const Profile = ({ reviews }) => {
                     </div>
                 </div>
 
+                {/* Appointments */}
+                <div className={`tab-content ${activeTab === 'appointments' ? 'show' : ''}`}>
+                    <h2>Appointments</h2>
+                    {/* Upcoming appointments and Display passed appointments */}
+                </div>
 
                 {/* Favorite Businesses */}
-                {/* <div className={`tab-content ${activeTab === 'favorite' ? 'show' : ''}`}>
+                <div className={`tab-content ${activeTab === 'favorite' ? 'show' : ''}`}>
                 <h2>Favorites</h2>
                     <div className="business-grid">
-                        {favoriteBusinesses.map((business, index) => (
+                        {/* {favoriteBusinesses.map((business, index) => (
                         <div key={index} className="business-square">
                             {business.name}
                         </div>
-                        ))}
+                        ))} */}
                     </div>
-                </div> */}
+                </div>
 
                 {/* Reviews */}
                 <div className={`tab-content ${activeTab === 'reviews' ? 'show' : ''}`}>

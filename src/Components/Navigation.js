@@ -17,7 +17,6 @@ function Navigation() {
           <li><Link to="/createbusiness">CreateBusiness</Link></li>
           <li><Link to="/createbusinessreview">Create A Review</Link></li>
           <li><Link to="/businessowneroverview">Business Overview</Link></li>
-          <li><Link to="/businessanalytics">Business Analytics</Link></li>
         </ul>
       </nav>
     );
