@@ -1,0 +1,97 @@
+/* analytics.css */
+
+/* Container styling */
+.analytics-container {
+    margin: 20px;
+}
+
+/* Header styling */
+.analytics-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Chart container styling */
+.analytics-chart {
+    margin-bottom: 20px;
+}
+
+/* Metrics container styling */
+.analytics-metrics {
+    margin-bottom: 20px;
+}
+
+/* List styling */
+.analytics-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* List item styling */
+.analytics-item {
+    margin-bottom: 10px;
+}
+
+/* Business name styling */
+.business-name {
+    font-weight: bold;
+}
+
+/* View count styling */
+.view-count {
+    color: #666;
+}
+
+/* User engagement metrics styling */
+.analytics-metrics h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.analytics-metrics p {
+    margin: 5px 0;
+}
+
+/* Color styles */
+.analytics-header {
+    color: #333;
+}
+
+.analytics-chart {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.analytics-metrics {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.analytics-metrics h2 {
+    color: #333;
+}
+
+.analytics-metrics p {
+    color: #555;
+}
+
+/* New styles for layout */
+.charts-and-metrics-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.analytics-chart {
+    flex: 1; /* Occupy available space */
+    max-width: calc(50% - 10px); /* Limit to half of the available space with gap */
+}
+
+.analytics-metrics {
+    flex: 1; /* Occupy available space */
+    max-width: calc(50% - 10px); /* Limit to half of the available space with gap */
+}

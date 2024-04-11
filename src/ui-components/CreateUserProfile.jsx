@@ -7,23 +7,14 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps, useNavigateAction } from "./utils";
-import MyIcon from "./MyIcon";
-import {
-  Button,
-  Flex,
-  Image,
-  SwitchField,
-  Text,
-  TextField,
-  View,
-} from "@aws-amplify/ui-react";
+import { Button, Flex, Text, TextField, View } from "@aws-amplify/ui-react";
 export default function CreateUserProfile(props) {
   const { profile, overrides, ...rest } = props;
   const buttonOnClick = useNavigateAction({ type: "url", url: "/ViewProfile" });
   return (
     <View
       width="696px"
-      height="556px"
+      height="326px"
       display="block"
       gap="unset"
       alignItems="unset"
@@ -42,7 +33,7 @@ export default function CreateUserProfile(props) {
         justifyContent="flex-start"
         alignItems="flex-start"
         position="absolute"
-        top="0px"
+        top="-23px"
         left="0px"
         padding="24px 24px 24px 24px"
         {...getOverrideProps(overrides, "Content")}
@@ -60,20 +51,6 @@ export default function CreateUserProfile(props) {
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Edit Profile")}
         >
-          <MyIcon
-            width="24px"
-            height="24px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            overflow="hidden"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            type="close"
-            {...getOverrideProps(overrides, "MyIcon")}
-          ></MyIcon>
           <Text
             fontFamily="Inter"
             fontSize="16px"
@@ -96,49 +73,9 @@ export default function CreateUserProfile(props) {
             {...getOverrideProps(overrides, "Create User Profle")}
           ></Text>
         </Flex>
-        <Flex
-          gap="16px"
-          direction="row"
-          width="unset"
-          height="unset"
-          justifyContent="flex-start"
-          alignItems="center"
-          shrink="0"
-          alignSelf="stretch"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          {...getOverrideProps(overrides, "Profile")}
-        >
-          <Image
-            width="96px"
-            height="96px"
-            display="block"
-            gap="unset"
-            alignItems="unset"
-            justifyContent="unset"
-            shrink="0"
-            position="relative"
-            borderRadius="160px"
-            padding="0px 0px 0px 0px"
-            objectFit="cover"
-            {...getOverrideProps(overrides, "image")}
-          ></Image>
-          <TextField
-            width="479px"
-            height="unset"
-            label="Image URL"
-            placeholder="www.image.com"
-            shrink="0"
-            size="default"
-            isDisabled={false}
-            labelHidden={false}
-            variation="default"
-            {...getOverrideProps(overrides, "TextField40136390")}
-          ></TextField>
-        </Flex>
         <View
           width="unset"
-          height="334px"
+          height="281px"
           display="block"
           gap="unset"
           alignItems="unset"
@@ -205,25 +142,12 @@ export default function CreateUserProfile(props) {
             variation="default"
             {...getOverrideProps(overrides, "TextField29766923")}
           ></TextField>
-          <SwitchField
-            width="201px"
-            height="46px"
-            label="Business Owner"
-            position="absolute"
-            top="199px"
-            left="-9px"
-            size="default"
-            defaultChecked={true}
-            isDisabled={false}
-            labelPosition="start"
-            {...getOverrideProps(overrides, "SwitchField")}
-          ></SwitchField>
           <Button
             width="unset"
             height="unset"
             position="absolute"
-            top="275px"
-            left="9px"
+            top="201px"
+            left="0px"
             size="default"
             isDisabled={false}
             variation="primary"

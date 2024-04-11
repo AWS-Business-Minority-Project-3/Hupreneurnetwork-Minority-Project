@@ -118,18 +118,6 @@ export default function CreateBusProfile(props) {
             objectFit="cover"
             {...getOverrideProps(overrides, "image")}
           ></Image>
-          <TextField
-            width="479px"
-            height="unset"
-            label="Image URL"
-            placeholder="www.image.com"
-            shrink="0"
-            size="default"
-            isDisabled={false}
-            labelHidden={false}
-            variation="default"
-            {...getOverrideProps(overrides, "TextField40206696")}
-          ></TextField>
         </Flex>
         <Flex
           gap="16px"

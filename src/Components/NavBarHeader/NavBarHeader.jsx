@@ -4,7 +4,7 @@ Please share your feedback here: https://form.asana.com/?k=uvp-HPgd3_hyoXRBw1IcN
 */
 
 import React from "react";
-import { Button } from "../Button";
+import { Button } from "@aws-amplify/ui-react";
 import SearchBar from "../NavSearchBar/NavSearchBar";
 import { signUp, signIn } from 'aws-amplify/auth';
 import { Link } from 'react-router-dom';
@@ -18,14 +18,15 @@ export const NavBarHeader = ({ className }) => {
         <div className="text-wrapper"><Link to="/marketingpage">Home</Link></div>
         <div><SearchBar/></div>
         <div className="text-wrapper"><Link to="/categoryview">Categories</Link></div>
-        <div className="text-wrapper"><Link to="/businessowneroverview">HU Business</Link></div>
+        <div className="text-wrapper"><Link to="/businessview">Businesses</Link></div>
+        <div className="text-wrapper"><Link to="/businessowneroverview">HU For Business Owners</Link></div>
       </div>
       <div className="actions">
         <Link to="/authentication">
-          <Button className="button-instance" isDisabled={false} label="Log In" size="default" variation="link" />
+        <Button className="button-instance" isDisabled={false} label="Log in" size="default" variation="link">Login</Button>
         </Link>
         <Link to="/authentication">
-          <Button className="button-instance" isDisabled={false} label="Sign Up" size="default" variation="primary" />
+        <Button className="button-instance" isDisabled={false} label="Sign up" size="default" variation="primary">Signup</Button>
         </Link>
       </div>
     </div>
