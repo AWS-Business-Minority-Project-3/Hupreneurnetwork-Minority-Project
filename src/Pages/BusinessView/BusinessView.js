@@ -1,6 +1,7 @@
 import React, { useState, useEffect, FormEvent } from "react";
 import { Button, Flex, Heading, View, Card, Image, 
    Badge, Collection, Divider} from "@aws-amplify/ui-react";
+import { Link } from "react-router-dom";
 
 
 import "@aws-amplify/ui-react/styles.css";
@@ -18,14 +19,14 @@ const BusinessView = ({ match }) => {
   }, []);
 
   async function fetchBusiness() {
-    const apiBusinessData = await client.graphql({ query: listBusinesses });
-    const businessFromAPI = apiBusinessData.data.listBusinesses.items;
-    setBusiness(businessFromAPI);
-    console.log("Retrieved businesses", businessFromAPI);
-  }
+      const apiBusinessData = await client.graphql({ query: listBusinesses });
+      const businessFromAPI = apiBusinessData.data.listBusinesses.items;
+      setBusiness(businessFromAPI);
+      console.log("Retrieved businesses", businessFromAPI);
+    }
 
   return (
-    
+
     <Collection
       items={businesses}
       type="grid"
@@ -60,9 +61,11 @@ const BusinessView = ({ match }) => {
             <p style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
               {item.description}
             </p>
-            <Button variation="primary" isFullWidth>
-              Details
-            </Button>
+            <Link to={`/entrepreneur/${item.id}`}>
+              <Button variation="primary" isFullWidth>
+                Details
+              </Button>
+            </Link>
           </View>
         </Card>
       )}

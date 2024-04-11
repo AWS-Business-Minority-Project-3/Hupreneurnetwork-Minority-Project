@@ -7,7 +7,7 @@
 /* eslint-disable */
 import * as React from "react";
 import { getOverrideProps } from "./utils";
-import { Button, Flex, Text } from "@aws-amplify/ui-react";
+import { Flex, Icon, Text } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function MarketingPricing(props) {
   const { overrides, ...rest } = props;
@@ -40,30 +40,9 @@ export default function MarketingPricing(props) {
       >
         <Text
           fontFamily="Inter"
-          fontSize="16px"
-          fontWeight="600"
-          color="rgba(149,4,4,1)"
-          lineHeight="24px"
-          textAlign="left"
-          display="block"
-          direction="column"
-          justifyContent="unset"
-          width="unset"
-          height="unset"
-          gap="unset"
-          alignItems="unset"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          whiteSpace="pre-wrap"
-          children="Pricing"
-          {...getOverrideProps(overrides, "Pricing")}
-        ></Text>
-        <Text
-          fontFamily="Inter"
           fontSize="32px"
           fontWeight="600"
-          color="rgba(13,26,38,1)"
+          color="rgba(149,4,4,1)"
           lineHeight="32px"
           textAlign="left"
           display="block"
@@ -77,8 +56,8 @@ export default function MarketingPricing(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="Choose your plan"
-          {...getOverrideProps(overrides, "Choose your plan")}
+          children="Why you should join our network! "
+          {...getOverrideProps(overrides, "Why you should join our network!")}
         ></Text>
         <Text
           fontFamily="Inter"
@@ -98,10 +77,10 @@ export default function MarketingPricing(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="14 day free trial for any plan, no credit card needed"
+          children="There are plenty of reasons but here a just a few!"
           {...getOverrideProps(
             overrides,
-            "14 day free trial for any plan, no credit card needed"
+            "There are plenty of reasons but here a just a few!"
           )}
         ></Text>
       </Flex>
@@ -141,33 +120,31 @@ export default function MarketingPricing(props) {
             width="unset"
             height="unset"
             justifyContent="flex-start"
-            alignItems="flex-start"
+            alignItems="center"
             shrink="0"
             position="relative"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Frame 42939393278")}
           >
-            <Text
-              fontFamily="Inter"
-              fontSize="16px"
-              fontWeight="600"
-              color="rgba(149,4,4,1)"
-              lineHeight="30px"
-              textAlign="center"
+            <Icon
+              width="109px"
+              height="119px"
+              viewBox={{ minX: 0, minY: 0, width: 109, height: 119 }}
+              paths={[
+                {
+                  d: "M90.8333 84.1124C86.2311 84.1124 82.1133 85.9046 78.9644 88.7123L35.7883 63.9207C36.0911 62.5467 36.3333 61.1727 36.3333 59.739C36.3333 58.3052 36.0911 56.9312 35.7883 55.5572L78.48 31.0045C81.75 33.9915 86.0494 35.8434 90.8333 35.8434C100.886 35.8434 109 27.8384 109 17.9217C109 8.00502 100.886 0 90.8333 0C80.7811 0 72.6667 8.00502 72.6667 17.9217C72.6667 19.3554 72.9089 20.7294 73.2117 22.1034L30.52 46.6561C27.25 43.6692 22.9506 41.8173 18.1667 41.8173C8.11444 41.8173 0 49.8223 0 59.739C0 69.6556 8.11444 77.6606 18.1667 77.6606C22.9506 77.6606 27.25 75.8087 30.52 72.8218L73.6356 97.6732C73.3328 98.9277 73.1511 100.242 73.1511 101.556C73.1511 111.174 81.0839 119 90.8333 119C100.583 119 108.516 111.174 108.516 101.556C108.516 91.9383 100.583 84.1124 90.8333 84.1124ZM90.8333 11.9478C94.1639 11.9478 96.8889 14.636 96.8889 17.9217C96.8889 21.2073 94.1639 23.8956 90.8333 23.8956C87.5028 23.8956 84.7778 21.2073 84.7778 17.9217C84.7778 14.636 87.5028 11.9478 90.8333 11.9478ZM18.1667 65.7129C14.8361 65.7129 12.1111 63.0246 12.1111 59.739C12.1111 56.4533 14.8361 53.7651 18.1667 53.7651C21.4972 53.7651 24.2222 56.4533 24.2222 59.739C24.2222 63.0246 21.4972 65.7129 18.1667 65.7129ZM90.8333 107.65C87.5028 107.65 84.7778 104.961 84.7778 101.676C84.7778 98.3901 87.5028 95.7018 90.8333 95.7018C94.1639 95.7018 96.8889 98.3901 96.8889 101.676C96.8889 104.961 94.1639 107.65 90.8333 107.65Z",
+                  fill: "rgba(149,4,4,1)",
+                  fillRule: "nonzero",
+                },
+              ]}
               display="block"
-              direction="column"
-              justifyContent="unset"
-              width="400px"
-              height="unset"
               gap="unset"
               alignItems="unset"
+              justifyContent="unset"
               shrink="0"
               position="relative"
-              padding="0px 0px 0px 0px"
-              whiteSpace="pre-wrap"
-              children="Free plan"
-              {...getOverrideProps(overrides, "Free plan")}
-            ></Text>
+              {...getOverrideProps(overrides, "Vector")}
+            ></Icon>
             <Text
               fontFamily="Inter"
               fontSize="32px"
@@ -186,29 +163,8 @@ export default function MarketingPricing(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="$0/mo"
-              {...getOverrideProps(overrides, "$0/mo")}
-            ></Text>
-            <Text
-              fontFamily="Inter"
-              fontSize="16px"
-              fontWeight="600"
-              color="rgba(92,102,112,1)"
-              lineHeight="25px"
-              textAlign="center"
-              display="block"
-              direction="column"
-              justifyContent="unset"
-              width="400px"
-              height="unset"
-              gap="unset"
-              alignItems="unset"
-              shrink="0"
-              position="relative"
-              padding="0px 0px 0px 0px"
-              whiteSpace="pre-wrap"
-              children="Free forever, always"
-              {...getOverrideProps(overrides, "Free forever, always")}
+              children="Connect with Howard Student"
+              {...getOverrideProps(overrides, "Connect with Howard Student")}
             ></Text>
           </Flex>
           <Flex
@@ -274,10 +230,10 @@ export default function MarketingPricing(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+              children="You will have access to consumers at Howard and in the local DC area that will support your business."
               {...getOverrideProps(
                 overrides,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.29766691"
+                "You will have access to consumers at Howard and in the local DC area that will support your business."
               )}
             ></Text>
           </Flex>
@@ -344,10 +300,10 @@ export default function MarketingPricing(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+              children="Gain access to certified reviewers as well as local pop up shops on campus."
               {...getOverrideProps(
                 overrides,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.29766695"
+                "Gain access to certified reviewers as well as local pop up shops on campus."
               )}
             ></Text>
           </Flex>
@@ -414,24 +370,13 @@ export default function MarketingPricing(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+              children="Join a community that will uplift and support your growing business"
               {...getOverrideProps(
                 overrides,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.29766699"
+                "Join a community that will uplift and support your growing business"
               )}
             ></Text>
           </Flex>
-          <Button
-            width="unset"
-            height="unset"
-            shrink="0"
-            alignSelf="stretch"
-            size="large"
-            isDisabled={false}
-            variation="primary"
-            children="Get started"
-            {...getOverrideProps(overrides, "Button29766686")}
-          ></Button>
         </Flex>
         <Flex
           gap="24px"
@@ -456,33 +401,26 @@ export default function MarketingPricing(props) {
             width="unset"
             height="unset"
             justifyContent="flex-start"
-            alignItems="flex-start"
+            alignItems="center"
             shrink="0"
             position="relative"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Frame 42939393392")}
           >
-            <Text
-              fontFamily="Inter"
-              fontSize="16px"
-              fontWeight="600"
-              color="rgba(149,4,4,1)"
-              lineHeight="30px"
-              textAlign="center"
+            <MyIcon
+              width="128px"
+              height="115px"
               display="block"
-              direction="column"
-              justifyContent="unset"
-              width="400px"
-              height="unset"
               gap="unset"
               alignItems="unset"
+              justifyContent="unset"
+              overflow="hidden"
               shrink="0"
               position="relative"
               padding="0px 0px 0px 0px"
-              whiteSpace="pre-wrap"
-              children="Basic plan"
-              {...getOverrideProps(overrides, "Basic plan")}
-            ></Text>
+              type="data"
+              {...getOverrideProps(overrides, "MyIcon40478683")}
+            ></MyIcon>
             <Text
               fontFamily="Inter"
               fontSize="32px"
@@ -501,29 +439,8 @@ export default function MarketingPricing(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="$20/mo"
-              {...getOverrideProps(overrides, "$20/mo")}
-            ></Text>
-            <Text
-              fontFamily="Inter"
-              fontSize="16px"
-              fontWeight="600"
-              color="rgba(92,102,112,1)"
-              lineHeight="25px"
-              textAlign="center"
-              display="block"
-              direction="column"
-              justifyContent="unset"
-              width="400px"
-              height="unset"
-              gap="unset"
-              alignItems="unset"
-              shrink="0"
-              position="relative"
-              padding="0px 0px 0px 0px"
-              whiteSpace="pre-wrap"
-              children="Billed annually"
-              {...getOverrideProps(overrides, "Billed annually39393395")}
+              children="Grow your revenue"
+              {...getOverrideProps(overrides, "Grow your revenue")}
             ></Text>
           </Flex>
           <Flex
@@ -589,10 +506,10 @@ export default function MarketingPricing(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+              children="Companies that have joined the network have seen an increase in sales in as short as 1 week!"
               {...getOverrideProps(
                 overrides,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.39393399"
+                "Companies that have joined the network have seen an increase in sales in as short as 1 week!"
               )}
             ></Text>
           </Flex>
@@ -659,10 +576,10 @@ export default function MarketingPricing(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+              children="It is shown that having reviews on products increases the likelyhood of purchasing."
               {...getOverrideProps(
                 overrides,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.39393403"
+                "It is shown that having reviews on products increases the likelyhood of purchasing."
               )}
             ></Text>
           </Flex>
@@ -729,24 +646,13 @@ export default function MarketingPricing(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+              children="Our application is free for you to join!"
               {...getOverrideProps(
                 overrides,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.39393407"
+                "Our application is free for you to join!"
               )}
             ></Text>
           </Flex>
-          <Button
-            width="unset"
-            height="unset"
-            shrink="0"
-            alignSelf="stretch"
-            size="large"
-            isDisabled={false}
-            variation="primary"
-            children="Get started"
-            {...getOverrideProps(overrides, "Button39393408")}
-          ></Button>
         </Flex>
         <Flex
           gap="24px"
@@ -771,33 +677,26 @@ export default function MarketingPricing(props) {
             width="unset"
             height="unset"
             justifyContent="flex-start"
-            alignItems="flex-start"
+            alignItems="center"
             shrink="0"
             position="relative"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Frame 42939393608")}
           >
-            <Text
-              fontFamily="Inter"
-              fontSize="16px"
-              fontWeight="600"
-              color="rgba(149,4,4,1)"
-              lineHeight="30px"
-              textAlign="center"
+            <MyIcon
+              width="142px"
+              height="136px"
               display="block"
-              direction="column"
-              justifyContent="unset"
-              width="400px"
-              height="unset"
               gap="unset"
               alignItems="unset"
+              justifyContent="unset"
+              overflow="hidden"
               shrink="0"
               position="relative"
               padding="0px 0px 0px 0px"
-              whiteSpace="pre-wrap"
-              children="Pro plan"
-              {...getOverrideProps(overrides, "Pro plan")}
-            ></Text>
+              type="shopping_bag"
+              {...getOverrideProps(overrides, "MyIcon40478687")}
+            ></MyIcon>
             <Text
               fontFamily="Inter"
               fontSize="32px"
@@ -816,29 +715,8 @@ export default function MarketingPricing(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="$100/mo"
-              {...getOverrideProps(overrides, "$100/mo")}
-            ></Text>
-            <Text
-              fontFamily="Inter"
-              fontSize="16px"
-              fontWeight="600"
-              color="rgba(92,102,112,1)"
-              lineHeight="25px"
-              textAlign="center"
-              display="block"
-              direction="column"
-              justifyContent="unset"
-              width="400px"
-              height="unset"
-              gap="unset"
-              alignItems="unset"
-              shrink="0"
-              position="relative"
-              padding="0px 0px 0px 0px"
-              whiteSpace="pre-wrap"
-              children="Billed annually"
-              {...getOverrideProps(overrides, "Billed annually39393611")}
+              children="Link your website"
+              {...getOverrideProps(overrides, "Link your website")}
             ></Text>
           </Flex>
           <Flex
@@ -904,10 +782,10 @@ export default function MarketingPricing(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+              children="You have the freedom to link your website and social media to your business account."
               {...getOverrideProps(
                 overrides,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.39393615"
+                "You have the freedom to link your website and social media to your business account."
               )}
             ></Text>
           </Flex>
@@ -974,10 +852,10 @@ export default function MarketingPricing(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+              children="Users can schedule appointments directly from our site."
               {...getOverrideProps(
                 overrides,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.39393619"
+                "Users can schedule appointments directly from our site."
               )}
             ></Text>
           </Flex>
@@ -1044,24 +922,13 @@ export default function MarketingPricing(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+              children="You have access to our analytics to see demographics of users interested in your profile."
               {...getOverrideProps(
                 overrides,
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.39393623"
+                "You have access to our analytics to see demographics of users interested in your profile."
               )}
             ></Text>
           </Flex>
-          <Button
-            width="unset"
-            height="unset"
-            shrink="0"
-            alignSelf="stretch"
-            size="large"
-            isDisabled={false}
-            variation="primary"
-            children="Get started"
-            {...getOverrideProps(overrides, "Button39393624")}
-          ></Button>
         </Flex>
       </Flex>
     </Flex>

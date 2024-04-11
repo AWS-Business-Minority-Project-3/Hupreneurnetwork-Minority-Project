@@ -5,8 +5,7 @@
  **************************************************************************/
 
 import * as React from "react";
-import { MyIconProps } from "./MyIcon";
-import { ButtonProps, FlexProps, ImageProps, SwitchFieldProps, TextFieldProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
+import { ButtonProps, FlexProps, TextFieldProps, TextProps, ViewProps } from "@aws-amplify/ui-react";
 export declare type EscapeHatchProps = {
     [elementHierarchy: string]: Record<string, unknown>;
 } | null;
@@ -22,17 +21,12 @@ export declare type CreateUserProfileOverridesProps = {
     CreateUserProfile?: PrimitiveOverrideProps<ViewProps>;
     Content?: PrimitiveOverrideProps<FlexProps>;
     "Edit Profile"?: PrimitiveOverrideProps<FlexProps>;
-    MyIcon?: MyIconProps;
     "Create User Profle"?: PrimitiveOverrideProps<TextProps>;
-    Profile?: PrimitiveOverrideProps<FlexProps>;
-    image?: PrimitiveOverrideProps<ImageProps>;
-    TextField40136390?: PrimitiveOverrideProps<TextFieldProps>;
     Forms?: PrimitiveOverrideProps<ViewProps>;
     TextField39424144?: PrimitiveOverrideProps<TextFieldProps>;
     "Frame 437"?: PrimitiveOverrideProps<FlexProps>;
     TextField29766922?: PrimitiveOverrideProps<TextFieldProps>;
     TextField29766923?: PrimitiveOverrideProps<TextFieldProps>;
-    SwitchField?: PrimitiveOverrideProps<SwitchFieldProps>;
     Button?: PrimitiveOverrideProps<ButtonProps>;
 } & EscapeHatchProps;
 export declare type CreateUserProfileProps = React.PropsWithChildren<Partial<ViewProps> & {

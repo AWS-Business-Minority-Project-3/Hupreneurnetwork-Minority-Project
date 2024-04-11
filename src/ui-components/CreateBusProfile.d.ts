@@ -26,7 +26,6 @@ export declare type CreateBusProfileOverridesProps = {
     "Create User Profle"?: PrimitiveOverrideProps<TextProps>;
     Profile?: PrimitiveOverrideProps<FlexProps>;
     image?: PrimitiveOverrideProps<ImageProps>;
-    TextField40206696?: PrimitiveOverrideProps<TextFieldProps>;
     Forms?: PrimitiveOverrideProps<FlexProps>;
     TextField3965783?: PrimitiveOverrideProps<TextFieldProps>;
     TextField3965784?: PrimitiveOverrideProps<TextFieldProps>;
