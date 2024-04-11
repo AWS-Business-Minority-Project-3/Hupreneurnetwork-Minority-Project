@@ -2,7 +2,6 @@ import React from "react";
 import {  GetStartedCustomer, Features, GetStartedBusinessOwner, Header  } from '../../ui-components';
 import "./style.css";
 
-
 export const MarketingPage = () => {
   return (
     <div className="marketing-page">

@@ -1,33 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { generateClient } from "aws-amplify/api";
-import { getBusiness } from "../../graphql/queries";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Entrepreneur.css";
 
-const client = generateClient();
-
-const CompanyXPage = () => {
+export const CompanyXPage = () => {
     const navigate = useNavigate();
-    const { businessId } = useParams(); // Extract businessId from URL params
-    const [businessData, setBusinessData] = useState(null);
     const [showForm, setShowForm] = useState(false);
     const [mediaItems, setMediaItems] = useState([]);
     const [mediaFile, setMediaFile] = useState(null);
     const [mediaTitle, setMediaTitle] = useState("");
-
-    useEffect(() => {
-        fetchBusinessData();
-    }, [businessId]);
-
-    async function fetchBusinessData() {
-        try {
-            const apiBusinessData = await client.graphql({ query: getBusiness, variables: { id: businessId } });
-            const business = apiBusinessData.data.getBusiness;
-            setBusinessData(business);
-        } catch (error) {
-            console.error("Error fetching company data", error);
-        }
-    };
 
     const handleAddMedia = () => {
         if (mediaFile && mediaTitle) {
@@ -53,20 +33,17 @@ const CompanyXPage = () => {
 
     const handleReviews = () => {
         navigate("/createbusinessreview");
-        // navigate(`/entrepreneur/${businessId}/reviews`);
     };
 
     return (
         <div className="company-x-page">
-            {businessData && (
-                <div className="div" style={{ backgroundImage: `url(${businessData.businessImagePath})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
-                    <div className="overlap">
-                        <div className="company-name">{businessData.name}</div>
-                    </div>
-                    <button className="add-media-button" onClick={() => setShowForm(true)}>Add Media</button>
-                    <button className="reviews" onClick={handleReviews}>Reviews</button>
+            <div className="div">
+                <div className="overlap">
+                    <div className="company-name">Company X</div>
                 </div>
-            )}
+                <button className="add-media-button" onClick={() => setShowForm(true)}>Add Media</button>
+                <button className="reviews" onClick={handleReviews}>Reviews</button>
+            </div>
             {showForm && (
                 <div className="add-media-form">
                     <h2>Add Media</h2>
@@ -100,5 +77,3 @@ const CompanyXPage = () => {
         </div>
     );
 };
-
-export default CompanyXPage;
