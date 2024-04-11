@@ -5,6 +5,8 @@ import { NavBarHeader } from './Components/NavBarHeader';
 import Profile from './Pages/Profile/Profile';
 import Authentication from './Pages/Authentication/Authentication';
 import CompanyXPage from './Pages/Entrepreneur/Entrepreneur';
+import ReviewForm from './Pages/ReviewForm/ReviewForm';
+import Reviews from './Pages/Reviews/Reviews';
 import { LeaveAReview } from './Pages/LeaveAReview/LeaveAReview';
 import { MarketingPage } from './Pages/MarketingPage';
 import BusinessView from './Pages/BusinessView/BusinessView';
@@ -28,11 +30,12 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/authentication" element={<Authentication />} />
             <Route path="/entrepreneur/:businessId" element={<CompanyXPage />} />
+            <Route path="/entrepreneur/:businessId/leave-review" element={<CreateBusinessReview/>}/>
+            <Route path="/entrepreneur/:businessId/reviews" element={<Reviews />} />
             <Route path="/LeaveAReview" element={<LeaveAReview/>}/>
             <Route path="/marketingpage" element={<MarketingPage/>}/>
             <Route path="/businessview" element={<BusinessView/>}/>
             <Route path="/createbusiness" element={<CreateBusiness/>}/>
-            <Route path="/createbusinessreview" element={<CreateBusinessReview/>}/>
             <Route path="/businessowneroverview" element={<BusinessOwnerOverview/>}/>
             <Route path="/categoryview" element={<CategoryView/>}/>
             <Route path="/businessanalytics" element={<BusinessAnalytics/>}/>

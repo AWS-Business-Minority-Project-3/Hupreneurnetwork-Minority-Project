@@ -150,6 +150,7 @@ export const listReviews = /* GraphQL */ `
     listReviews(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        businessId
         userId
         title
         date
