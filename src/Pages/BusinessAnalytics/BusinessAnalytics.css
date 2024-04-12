@@ -82,16 +82,18 @@
 /* New styles for layout */
 .charts-and-metrics-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* Change to column direction */
     gap: 20px;
 }
 
-.analytics-chart {
-    flex: 1; /* Occupy available space */
-    max-width: calc(50% - 10px); /* Limit to half of the available space with gap */
+/* Adjusting layout for charts and metrics */
+.analytics-row {
+    display: flex;
+    gap: 20px;
 }
 
-.analytics-metrics {
-    flex: 1; /* Occupy available space */
-    max-width: calc(50% - 10px); /* Limit to half of the available space with gap */
+.analytics-row .analytics-chart,
+.analytics-row .analytics-metrics {
+    flex: 1;
+    max-width: calc(50% - 10px);
 }
