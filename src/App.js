@@ -23,7 +23,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navigation />
+        {/* <Navigation /> */}
         <NavBarHeader/>
         <main className="App-content">
           <Routes>
